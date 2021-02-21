@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
+    <title>{{#if is_home}}{{site_title}}{{else}}{{title}}{{/if}}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <style>
+    :root { --color: #DF0505; }
+
+    * {
+        font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: inline; color: #111; border-bottom: 1px solid #111; margin-bottom: 20px; }
+    h2 { color: #555; margin-top: 100px; margin-bottom: 20px; }
+    a { color: var(--color); }
+    em { color: #777; }
+    strong { color: #111; border-bottom: 1px solid #111; }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HIGHLIGHTING */
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #f5f5f5;padding: 20px;margin-left: -20px; }
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 20px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 125px); }
+    .posts li .date { float: right; width: 125px; color: #bbb; text-align: right; vertical-align: top; }
+
+    /** POST */
+    .post { margin-top: 20px; }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; }
+    .post .entry { color: #555; margin-top: 20px; }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    </style>
+
+    {{#if is_post}}
+    <script defer src="/assets/js/highlight.pack.js"></script>
+    {{/if}}
+</head>
+<body>
+
+    {{#if is_home}}
+    <h1>Hi, I'm Nomm</h1>
+    <p class="description">
+        I'm a software engineer livimg in Lisbon, Portugal. I'm spending my days at
+        <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript. You can
+        browse my open source projects on <a href="https://github.com/askonomm">Github</a>, follow me on
+        <a href="https://twitter.com/soynomm">Twitter</a> and send me a letter via <a href="mailto:nomm@soynomm.com">
+        asko@askonomm.com</a>.
+    </p>
+
+    <h2>Blog</h2>
+
+    <ul class="posts">
+    {{#posts}}
+        {{#if public}}
+        <li>
+            <h3><a href="{{path}}">{{title}}</a></h3>
+            <div class="date">{{format_date date "%b %d, %Y"}}</div>
+        </li>
+        {{/if}}
+    {{/posts}}
+    </ul>
+    {{/if}}
+
+    {{#if is_post}}
+        <a class="back" href="/">&laquo; back</a>
+
+        <div class="post">
+            <h1>{{title}}</h1>
+            {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
+            <div class="entry">{{{entry}}}</div>
+        </div>
+    {{/if}}
+
+</body>
+</html>
