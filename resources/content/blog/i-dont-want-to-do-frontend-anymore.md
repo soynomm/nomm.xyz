@@ -48,4 +48,4 @@ to know a bit about everything and a lot about nothing.
 Thus, I don't want to do front-end development anymore. The joy is gone. I've given in my resignation at my current place of
 employment and will be seeking an exclusively back-end role for my next adventure, starting April. The language doesn't 
 matter much to me, I know enough of them to know that they are all very similar and thus easy enough to learn. If you know of a 
-good opportunity, [let me know](mailto:asko@askonomm.com).
+good opportunity, [let me know](mailto:nomm@soynomm.com).

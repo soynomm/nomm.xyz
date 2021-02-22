@@ -5,7 +5,7 @@ public: true
 date: 2021-02-15
 ---
 
-Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, [as you may know](https://www.askonomm.com/blog/i-dont-want-to-do-frontend-anymore/) I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.
+Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, [as you may know](https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/) I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.
 
 First I needed to figure out what it is exactly that I want to do going forward. I knew I wanted to do back-end, but what language? Well, my wife is currently learning Java and I've heard there's lots of jobs in it so I checked Glassdoor for Java positions, lo' and behold, 267 job postings. There's just one problem with Java and it's a big one; I don't like it much. Then, clueless as to how to continue, I went over to the [Stack Overflow 2020 survey results](https://insights.stackoverflow.com/survey/2020) and found that [the most wanted language is Python](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted). Glassdoor says 300 job postings for Python! That's good news.
 
@@ -91,7 +91,7 @@ def get_content_meta(content):
         return {}
 ```
 
-It takes the whole content of the file as an input, finds the part that starts with three hyphens and ends with three hyphens (but only the first part like this, because you might have more!). It then continues to parse it into a dictionary, with help of some additional functions like `remove_spaces_from_around_items_in_list` and `remove_all_occurences_from_list`, all of which you can check out [in the final product](https://github.com/askonomm/bloggo/blob/master/bloggo/core.py). In the end it returns a parsed dictionary, or an empty dictionary if our expected structure was not found.
+It takes the whole content of the file as an input, finds the part that starts with three hyphens and ends with three hyphens (but only the first part like this, because you might have more!). It then continues to parse it into a dictionary, with help of some additional functions like `remove_spaces_from_around_items_in_list` and `remove_all_occurences_from_list`, all of which you can check out [in the final product](https://github.com/soynomm/bloggo/blob/master/bloggo/core.py). In the end it returns a parsed dictionary, or an empty dictionary if our expected structure was not found.
 
 Moving on, we now need to get the Markdown bit of the file, which is a lot easier to get:
 
@@ -190,6 +190,6 @@ Now it should make more sense to you what `generate_file` does as you can see ho
 
 ## To conclude
 
-This all makes up a static site generator I have called [Bloggo](https://github.com/askonomm/bloggo), and it runs this very site. There's a bit more to it than this blog post details and if you're curious then [you can go browse all of it on Github](https://github.com/askonomm/bloggo). 
+This all makes up a static site generator I have called [Bloggo](https://github.com/soynomm/bloggo), and it runs this very site. There's a bit more to it than this blog post details and if you're curious then [you can go browse all of it on Github](https://github.com/soynomm/bloggo). 
 
 Overall I'm quite happy with the result. I managed to make something I had never made before and also learn a new language. I do realise that this use-case obviously only gives me minimal exposure to the vast ecosystem of Python, but I did learn quite a few things - like how to create a Pypi package, basic syntax and so on. And damn, the language is a pure joy to write. I like it a lot. 
