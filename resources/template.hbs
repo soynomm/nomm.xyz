@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
     <title>{{#if is_home}}{{site_title}}{{else}}{{title}}{{/if}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="/assets/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed/" />
     <style>
     :root { --color: #DF0505; }
 
@@ -80,7 +81,7 @@
         <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript. You can
         browse my open source projects on <a href="https://github.com/soynomm">Github</a>, follow me on
         <a href="https://twitter.com/soynomm">Twitter</a> and send me a letter via <a href="mailto:nomm@soynomm.com">
-        asko@askonomm.com</a>.
+        nomm@soynomm.com</a>.
     </p>
 
     <h2>Blog</h2>
@@ -89,7 +90,7 @@
     {{#posts}}
         {{#if public}}
         <li>
-            <h3><a href="{{path}}">{{title}}</a></h3>
+            <h3><a href="{{url}}">{{title}}</a></h3>
             <div class="date">{{format_date date "%b %d, %Y"}}</div>
         </li>
         {{/if}}

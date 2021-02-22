@@ -1,27 +1,27 @@
-
-    <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
-        xmlns:content="http://purl.org/rss/1.0/modules/content/"
-        xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:atom="http://www.w3.org/2005/Atom"
-        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-        xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-        >
-    <channel>
-        <title>Nomm</title>
-        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"></atom:link>
-        <link>https://soynomm.com</link>
-        <description>Nomm is a software engineer, this is his personal site and blog.</description>
-        <lastBuildDate>Fri, 05 Feb 2021 21:41:44 +0000</lastBuildDate>
-        <language>en</language>
-        <sy:updatePeriod>hourly</sy:updatePeriod>
-        <sy:updateFrequency>1</sy:updateFrequency>
-        <item>
-            <title>Creating a static site generator in Python</title>
-            <link>https://soynomm.com/blog/creating-a-static-site-generator-in-python</link>
-            <pubDate>2021-02-15</pubDate>
-            <description>An exercise in learning how to write Python on the road to becoming a Python engineer</description>
-            <content:encoded><![CDATA[<p>Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, <a href="https://www.askonomm.com/blog/i-dont-want-to-do-frontend-anymore/">as you may know</a> I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+            xmlns:content="http://purl.org/rss/1.0/modules/content/"
+            xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:atom="http://www.w3.org/2005/Atom"
+            xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+            xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+            >
+        <channel>
+            <title>Nomm</title>
+            <atom:link href="https://soynomm.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+            <link>https://soynomm.com</link>
+            <description>Nomm is a software engineer, this is his personal site and blog.</description>
+            <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate>
+            <language>en</language>
+            <sy:updatePeriod>hourly</sy:updatePeriod>
+            <sy:updateFrequency>1</sy:updateFrequency>
+            <item>
+                <title>Creating a static site generator in Python</title>
+                <link>https://soynomm.com/blog/creating-a-static-site-generator-in-python</link>
+                <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+                <guid isPermaLink="false">https://soynomm.com/blog/creating-a-static-site-generator-in-python</guid>
+                <description>An exercise in learning how to write Python on the road to becoming a Python engineer</description>
+                <content:encoded><![CDATA[<p>Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, <a href="https://www.askonomm.com/blog/i-dont-want-to-do-frontend-anymore/">as you may know</a> I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.</p>
 <p>First I needed to figure out what it is exactly that I want to do going forward. I knew I wanted to do back-end, but what language? Well, my wife is currently learning Java and I've heard there's lots of jobs in it so I checked Glassdoor for Java positions, lo' and behold, 267 job postings. There's just one problem with Java and it's a big one; I don't like it much. Then, clueless as to how to continue, I went over to the <a href="https://insights.stackoverflow.com/survey/2020">Stack Overflow 2020 survey results</a> and found that <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted">the most wanted language is Python</a>. Glassdoor says 300 job postings for Python! That's good news.</p>
 <p>Engineers all over the world like Python, but would I? I've certainly heard of it before, but believe it or not I've never written a single line of code in it. I don't think I've ever as much as went on Python's website before. So then first thing I did was to think of what I could create to test Python out, and I remembered that my own blog was a dynamically generated site written in PHP, which while fast still required actual processing power to render, so I decided to turn the dynamic part into static and entirely cut out the middle man. </p>
 <p>I decided to write a static site generator. Yeah, I know, there's millions of them out there - but I have never created one, so it seemed like a pretty good challenge to me. Especially to write in a language I know nothing about.</p>
@@ -163,13 +163,14 @@ date: 2021-02-15
 <h2>To conclude</h2>
 <p>This all makes up a static site generator I have called <a href="https://github.com/askonomm/bloggo">Bloggo</a>, and it runs this very site. There's a bit more to it than this blog post details and if you're curious then <a href="https://github.com/askonomm/bloggo">you can go browse all of it on Github</a>. </p>
 <p>Overall I'm quite happy with the result. I managed to make something I had never made before and also learn a new language. I do realise that this use-case obviously only gives me minimal exposure to the vast ecosystem of Python, but I did learn quite a few things - like how to create a Pypi package, basic syntax and so on. And damn, the language is a pure joy to write. I like it a lot.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title>I don&#x27;t want to do front-end anymore</title>
-            <link>https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore</link>
-            <pubDate>2021-02-08</pubDate>
-            <description>Front-end is not something that makes me happy anymore, in large part due to its complexity.</description>
-            <content:encoded><![CDATA[<p>I started coding when I was 14, around 2007 or so. The very first thing I wrote was HTML, then CSS. I liked
+            </item>
+            <item>
+                <title>I don&#x27;t want to do front-end anymore</title>
+                <link>https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore</link>
+                <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+                <guid isPermaLink="false">https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore</guid>
+                <description>Front-end is not something that makes me happy anymore, in large part due to its complexity.</description>
+                <content:encoded><![CDATA[<p>I started coding when I was 14, around 2007 or so. The very first thing I wrote was HTML, then CSS. I liked
 making stupid little web pages containing youtube embeds and guest books (anyone remembers those?) full of 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee">marquees</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink">blinks</a> 
 and gifs. Lots of gifs. The pages were very simple, but joyful to make and also to use. At the time I had no idea that 
@@ -206,14 +207,15 @@ to know a bit about everything and a lot about nothing. </p>
 employment and will be seeking an exclusively back-end role for my next adventure, starting April. The language doesn't 
 matter much to me, I know enough of them to know that they are all very similar and thus easy enough to learn. If you know of a 
 good opportunity, <a href="mailto:asko@askonomm.com">let me know</a>.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title>The Ghost Recruiter</title>
-            <link>https://soynomm.com/blog/the-ghost-recruiter</link>
-            <pubDate>2020-10-20</pubDate>
-            <description></description>
-            <content:encoded><![CDATA[<p>:)</p>]]></content:encoded>
-        </item>
-    </channel>
-    </rss>
-    
+            </item>
+            <item>
+                <title>The Ghost Recruiter</title>
+                <link>https://soynomm.com/blog/the-ghost-recruiter</link>
+                <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
+                <guid isPermaLink="false">https://soynomm.com/blog/the-ghost-recruiter</guid>
+                <description></description>
+                <content:encoded><![CDATA[<p>:)</p>]]></content:encoded>
+            </item>
+        </channel>
+        </rss>
+        
