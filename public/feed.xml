@@ -11,10 +11,22 @@
             <atom:link href="https://soynomm.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
             <link>https://soynomm.com</link>
             <description>Nomm is a software engineer, this is his personal site and blog.</description>
-            <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate>
+            <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate>
             <language>en</language>
             <sy:updatePeriod>hourly</sy:updatePeriod>
             <sy:updateFrequency>1</sy:updateFrequency>
+            <item>
+                <title>The Ghost Recruiter</title>
+                <link>https://soynomm.com/blog/the-ghost-recruiter</link>
+                <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+                <guid isPermaLink="false">https://soynomm.com/blog/the-ghost-recruiter</guid>
+                <description>A story about a parcitular person who gives hope and then takes it away.</description>
+                <content:encoded><![CDATA[<p>It's a Friday afternoon and you've just clocked out of a long work week. Work has been running you down lately. Maybe it's that you haven't had a decent vacation in a long time or maybe you're just tired of working on the same ol', same ol'. Maybe, just maybe, you could use a change. Suddenly, your phone lights up with a notification from your LinkedIn app with a title saying; "Looking for a new opportunity?", as if you were wishing, and a genie was granting. </p>
+<p>Now you write this recruiter saying something like; "Wow how did you know?" and; "tell me more". The recruiter continues to give you information on this amazing company that is changing the world in a variety of ways and how you could contribute to the betterment of the world and sleep soundly at night knowing your hard work actually makes a difference. This company has an amazing work culture, uses all the latest, greatest, and just best tools. And it doesn't stop there.</p>
+<p>Of course, you say yes. This is what you have been waiting for, even if unknowingly. Your subconscious has been longing for a change of pace to your otherwise pretty mundane existence. This is it. You feel re-energized, ready for anything. The recruiter tells you he has forwarded your application and that you'd be a perfect fit, and he'll keep you posted with an update as soon as humanly possible. You even start doing some algorithm exercises to make yourself the best you that you can be when the technical interview time arrives. You're unstoppable. </p>
+<p>A few days go by and the recruiter not only writes you - but calls you. He goes on to reassure you that good things are coming and that your application is being reviewed already. The next step would be to have a call with the hiring manager and then have the technical screen. Everything is so damn close to becoming true that you can almost taste it, smell it. </p>
+<p>Except that the next step never happens. You never hear back from the recruiter or the company in question. Feelings of great prosperity are quickly replaced by a sense of hollow sadness. "What did I do wrong?", you ask yourself. "Was it my personality?", "Maybe my resume wasn't strong enough?", you contemplate. Before you fall into complete emotional disarray, you write to the recruiter, asking for an update. Days go by, nothing comes back. You'll be fine, of course. Shit like this happens. But every time it does, it takes a piece of you with it as the opportunity that could've been, wasn't. A peace of naive optimism, a good piece. And it replaces it with cold skepticism.</p>]]></content:encoded>
+            </item>
             <item>
                 <title>Creating a static site generator in Python</title>
                 <link>https://soynomm.com/blog/creating-a-static-site-generator-in-python</link>
@@ -207,14 +219,6 @@ to know a bit about everything and a lot about nothing. </p>
 employment and will be seeking an exclusively back-end role for my next adventure, starting April. The language doesn't 
 matter much to me, I know enough of them to know that they are all very similar and thus easy enough to learn. If you know of a 
 good opportunity, <a href="mailto:nomm@soynomm.com">let me know</a>.</p>]]></content:encoded>
-            </item>
-            <item>
-                <title>The Ghost Recruiter</title>
-                <link>https://soynomm.com/blog/the-ghost-recruiter</link>
-                <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
-                <guid isPermaLink="false">https://soynomm.com/blog/the-ghost-recruiter</guid>
-                <description></description>
-                <content:encoded><![CDATA[<p>:)</p>]]></content:encoded>
             </item>
         </channel>
         </rss>
