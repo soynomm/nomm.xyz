@@ -17,6 +17,6 @@ Except that the next step never happens. You never hear back from the recruiter 
 
 ---
 
-The above is a somewhat exaggerated version of what happens for dramatic purposes, but I, like many, have experienced this and while sure, the more you experience it the less you care about this sort of thing, but you can't deny the negative effect it has on you and other people. 
+The above is a somewhat exaggerated (for dramatic purposes) version of what really happens, but I, like many, have experienced this and while sure, the more you experience it the less you care about this sort of thing, you can't deny the negative effect it has on you and other people. 
 
 If you're a recruiter reading this, please don't be an asshole. If the person applying wasn't a suitable candidate, just tell them. And if you can, tell them also why. It may be uncomfortable to do so, but you'll be a better person for it and the candidate knows what to improve upon so that maybe the next opportunity that comes by will be _the_ opportunity.
