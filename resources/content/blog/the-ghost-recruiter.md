@@ -1,6 +1,6 @@
 ---
 title: The Ghost Recruiter
-description: A story about a parcitular person who gives hope and then takes it away.
+description: A story about a particular type of person who gives hope and then takes it away.
 public: true
 date: 2021-02-23
 ---
