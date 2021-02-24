@@ -25,7 +25,7 @@
 
     h1, h2 { text-transform: uppercase; }
     h1 { display: inline; color: #111; border-bottom: 1px solid #111; margin-bottom: 20px; }
-    h2 { color: #555; margin-top: 100px; margin-bottom: 20px; }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; }
     a { color: var(--color); }
     em { color: #777; }
     strong { color: #111; border-bottom: 1px solid #111; }
@@ -50,6 +50,10 @@
 
     /** HOME */
     .description { margin-top: 20px; }
+    .projects { list-style: none; margin-top: 20px; }
+    .projects li { margin-bottom: 20px; }
+    .projects li .description { color: #777; margin-top: 0px; }
+    .projects li .tags {  }
     .posts { list-style: none; margin-top: 20px; }
     .posts li { display: flow-root; margin-bottom: 5px; }
     @media all and (max-width: 600px) { .posts li { margin-bottom: 20px; } }
@@ -84,6 +88,25 @@
         <a href="https://twitter.com/soynomm">Twitter</a> and send him a letter via <a href="mailto:nomm@soynomm.com">
         nomm@soynomm.com</a>.
     </p>
+
+    <h2>Projects</h2>
+    <ul class="projects">
+        <li>
+            <h3><a href="https://github.com/soynomm/bloggo">Bloggo</a></h3>
+            <div class="description">A blog-oriented static site generator</div>
+            <div class="tags">Python</div>
+        </li>
+        <li>
+            <h3><a href="https://apps.apple.com/gb/app/bruno-task-management/id1532125446">Bruno</a></h3>
+            <div class="description">Minimal, effective to-do lists for iOS</div>
+            <div class="tags">Swift, SwiftUI</div>
+        </li>
+        <li>
+            <h3><a href="https://wordpress.org/plugins/splendid-speed/advanced/">Splendid Speed</a></h3>
+            <div class="description">WordPress performance plugin</div>
+            <div class="tags">PHP</div>
+        </li>
+    </ul>
 
     <h2>Blog</h2>
 
