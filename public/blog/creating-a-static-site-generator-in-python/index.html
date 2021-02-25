@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="An exercise in learning how to write Python on the road to becoming a Python engineer">
-    <title>Creating a static site generator in Python</title>
+    <title>Creating a static site generator in Python &mdash; Nomm</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
@@ -23,6 +23,21 @@
         margin: 0;
     }
 
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     h1, h2 { text-transform: uppercase; }
     h1 { display: inline; color: #111; border-bottom: 1px solid #111; margin-bottom: 20px; }
     h2 { color: #999; margin-top: 100px; margin-bottom: 20px; }
@@ -34,7 +49,31 @@
     body { width: 550px; color: #333; margin: 50px auto; }
     @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
 
-    /** HIGHLIGHTING */
+    /** HOME */
+    .description { margin-top: 20px; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 125px); }
+    .posts li .date { float: right; width: 125px; color: #bbb; text-align: right; vertical-align: top; }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    .back a { color: #bbb; }
+    .post { margin-top: 20px; }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; }
+    .post .entry { color: #555; margin-top: 20px; }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    </style>
+
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
+    <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #f5f5f5;padding: 20px;margin-left: -20px; }
     .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
     .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
@@ -47,43 +86,19 @@
     .hljs-emphasis { font-style: italic; }
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
-
-    /** HOME */
-    .description { margin-top: 20px; }
-    .projects { list-style: none; margin-top: 20px; }
-    .projects li { margin-bottom: 20px; }
-    .projects li .description { color: #777; margin-top: 0px; }
-    .projects li .tags {  }
-    .posts { list-style: none; margin-top: 20px; }
-    .posts li { display: flow-root; margin-bottom: 5px; }
-    @media all and (max-width: 600px) { .posts li { margin-bottom: 20px; } }
-    .posts li:last-child { margin-bottom: 0; }
-    .posts li h3 { float: left; width: calc(100% - 125px); }
-    .posts li .date { float: right; width: 125px; color: #bbb; text-align: right; vertical-align: top; }
-
-    /** POST */
-    .post { margin-top: 20px; }
-    .post h1 { margin-bottom: 0; }
-    .post .date { color: #bbb; }
-    .post .entry { color: #555; margin-top: 20px; }
-    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
-    .post .entry h2,
-    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
-    .post .entry h2 { color: #111; }
-    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
-
-    <script defer src="/assets/js/highlight.pack.js"></script>
 </head>
 <body>
 
-    
-        <a class="back" href="/">&laquo; back</a>
 
-        <div class="post">
-            <h1>Creating a static site generator in Python</h1>
-            <div class="date">Feb 15, 2021</div>
-            <div class="entry"><p>Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, <a href="https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/">as you may know</a> I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.</p>
+            <div class="back">
+                <a href="https://soynomm.com/blog">&laquo; back</a>
+            </div>
+
+            <div class="post">
+                <h1>Creating a static site generator in Python</h1>
+                <div class="date">Feb 15, 2021</div>
+                <div class="entry"><p>Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, <a href="https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/">as you may know</a> I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.</p>
 <p>First I needed to figure out what it is exactly that I want to do going forward. I knew I wanted to do back-end, but what language? Well, my wife is currently learning Java and I've heard there's lots of jobs in it so I checked Glassdoor for Java positions, lo' and behold, 267 job postings. There's just one problem with Java and it's a big one; I don't like it much. Then, clueless as to how to continue, I went over to the <a href="https://insights.stackoverflow.com/survey/2020">Stack Overflow 2020 survey results</a> and found that <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted">the most wanted language is Python</a>. Glassdoor says 300 job postings for Python! That's good news.</p>
 <p>Engineers all over the world like Python, but would I? I've certainly heard of it before, but believe it or not I've never written a single line of code in it. I don't think I've ever as much as went on Python's website before. So then first thing I did was to think of what I could create to test Python out, and I remembered that my own blog was a dynamically generated site written in PHP, which while fast still required actual processing power to render, so I decided to turn the dynamic part into static and entirely cut out the middle man. </p>
 <p>I decided to write a static site generator. Yeah, I know, there's millions of them out there - but I have never created one, so it seemed like a pretty good challenge to me. Especially to write in a language I know nothing about.</p>
@@ -225,7 +240,9 @@ date: 2021-02-15
 <h2>To conclude</h2>
 <p>This all makes up a static site generator I have called <a href="https://github.com/soynomm/bloggo">Bloggo</a>, and it runs this very site. There's a bit more to it than this blog post details and if you're curious then <a href="https://github.com/soynomm/bloggo">you can go browse all of it on Github</a>. </p>
 <p>Overall I'm quite happy with the result. I managed to make something I had never made before and also learn a new language. I do realise that this use-case obviously only gives me minimal exposure to the vast ecosystem of Python, but I did learn quite a few things - like how to create a Pypi package, basic syntax and so on. And damn, the language is a pure joy to write. I like it a lot.</p></div>
-        </div>
+            </div>
+
+
 
 </body>
 </html>

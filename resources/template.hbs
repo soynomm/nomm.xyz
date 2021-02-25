@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
-    <title>{{#if is_home}}{{site_title}}{{else}}{{title}}{{/if}}</title>
+    <title>{{#if is_home}}{{site_title}}{{else}}{{title}} &mdash; Nomm{{/if}}</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
@@ -23,6 +23,21 @@
         margin: 0;
     }
 
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     h1, h2 { text-transform: uppercase; }
     h1 { display: inline; color: #111; border-bottom: 1px solid #111; margin-bottom: 20px; }
     h2 { color: #999; margin-top: 100px; margin-bottom: 20px; }
@@ -34,34 +49,18 @@
     body { width: 550px; color: #333; margin: 50px auto; }
     @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
 
-    /** HIGHLIGHTING */
-    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #f5f5f5;padding: 20px;margin-left: -20px; }
-    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
-    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
-    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
-    .hljs-literal { color: #0184bb; }
-    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
-    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
-    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
-    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
-    .hljs-emphasis { font-style: italic; }
-    .hljs-strong { font-weight: bold; }
-    .hljs-link { text-decoration: underline; }
-
     /** HOME */
     .description { margin-top: 20px; }
-    .projects { list-style: none; margin-top: 20px; }
-    .projects li { margin-bottom: 20px; }
-    .projects li .description { color: #777; margin-top: 0px; }
-    .projects li .tags {  }
     .posts { list-style: none; margin-top: 20px; }
     .posts li { display: flow-root; margin-bottom: 5px; }
-    @media all and (max-width: 600px) { .posts li { margin-bottom: 20px; } }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
     .posts li:last-child { margin-bottom: 0; }
     .posts li h3 { float: left; width: calc(100% - 125px); }
     .posts li .date { float: right; width: 125px; color: #bbb; text-align: right; vertical-align: top; }
 
     /** POST */
+    .back { margin-bottom: 40px; }
+    .back a { color: #bbb; }
     .post { margin-top: 20px; }
     .post h1 { margin-bottom: 0; }
     .post .date { color: #bbb; }
@@ -74,62 +73,69 @@
     </style>
 
     {{#if is_post}}
-    <script defer src="/assets/js/highlight.pack.js"></script>
+    <script defer src="{{site_url}}/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #f5f5f5;padding: 20px;margin-left: -20px; }
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
     {{/if}}
 </head>
-<body>
+<body{{#if is_home}} class="home"{{/if}}>
 
     {{#if is_home}}
-    <h1>Nomm</h1>
+    <h1>I'm Nomm</h1>
     <p class="description">
-        A software engineer living in Lisbon, Portugal. Spends his days at
+        A software engineer living in Lisbon, Portugal. I spend my days at
         <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript. You can
-        browse his open source projects on <a href="https://github.com/soynomm">Github</a>, follow him on
-        <a href="https://twitter.com/soynomm">Twitter</a> and send him a letter via <a href="mailto:nomm@soynomm.com">
-        nomm@soynomm.com</a>.
+        browse my open source projects on <a href="https://github.com/soynomm">Github</a>, follow me on
+        <a href="https://twitter.com/soynomm">Twitter</a> and send me a letter via <a href="mailto:nomm@soynomm.com">
+        nomm@soynomm.com</a>. I also write a <a href="{{site_url}}/blog">blog</a>. The blog has <a href="{{site_url}}/feed.xml">feed</a>, if
+        you're interested in subscribing.
     </p>
-
-    <h2>Projects</h2>
-    <ul class="projects">
-        <li>
-            <h3><a href="https://github.com/soynomm/bloggo">Bloggo</a></h3>
-            <div class="description">A blog-oriented static site generator</div>
-            <div class="tags">Python</div>
-        </li>
-        <li>
-            <h3><a href="https://apps.apple.com/gb/app/bruno-task-management/id1532125446">Bruno</a></h3>
-            <div class="description">Minimal, effective to-do lists for iOS</div>
-            <div class="tags">Swift, SwiftUI</div>
-        </li>
-        <li>
-            <h3><a href="https://wordpress.org/plugins/splendid-speed/advanced/">Splendid Speed</a></h3>
-            <div class="description">WordPress performance plugin</div>
-            <div class="tags">PHP</div>
-        </li>
-    </ul>
-
-    <h2>Blog</h2>
-
-    <ul class="posts">
-    {{#posts}}
-        {{#if public}}
-        <li>
-            <h3><a href="{{url}}">{{title}}</a></h3>
-            <div class="date">{{format_date date "%b %d, %Y"}}</div>
-        </li>
-        {{/if}}
-    {{/posts}}
-    </ul>
     {{/if}}
-    
-    {{#if is_post}}
-        <a class="back" href="/">&laquo; back</a>
 
-        <div class="post">
-            <h1>{{title}}</h1>
-            {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
-            <div class="entry">{{{entry}}}</div>
-        </div>
+    {{#if is_post}}
+        {{#if is_blog}}
+            <div class="back">
+                <a href="{{site_url}}/">&laquo; back</a>
+            </div>
+
+            <h1>Blog</h1>
+
+            <ul class="posts">
+            {{#posts}}
+                {{#if public}}
+                <li>
+                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
+                    <div class="date">{{format_date date "%b %d, %Y"}}</div>
+                </li>
+                {{/if}}
+            {{/posts}}
+            </ul>
+
+        {{else}}
+            <div class="back">
+                <a href="{{site_url}}/blog">&laquo; back</a>
+            </div>
+
+            <div class="post">
+                <h1>{{title}}</h1>
+                {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
+                <div class="entry">{{{entry}}}</div>
+            </div>
+
+        {{/if}}
+
     {{/if}}
 
 </body>
