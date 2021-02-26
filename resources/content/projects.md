@@ -1,6 +1,6 @@
 ---
 title: Projects
-description:
+description: A variety of software projects that I'm more-or-less actively working on.
 ---
 
 I'm a passionate tinkerer who got into software development not for a job, but 
