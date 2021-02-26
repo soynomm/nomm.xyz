@@ -15,7 +15,7 @@ A blog-oriented static site generator used for this very site, written in
 Python. I wrote this to learn Python and to, naturally, have a tailor-made blog 
 machine that tickles my fancy. 
 
-## [Splendid Speed](#)
+## [Splendid Speed](https://wordpress.org/plugins/splendid-speed/)
 
 A WordPress performance plugin I made pretty much out of frustration that any 
 existing plugin was full of bloat, ads or who-knows-what. It has a total of 12
