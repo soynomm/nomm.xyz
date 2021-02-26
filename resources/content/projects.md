@@ -6,7 +6,8 @@ description: A variety of software projects that I'm more-or-less actively worki
 I'm a passionate tinkerer who got into software development not for a job, but 
 for scratching that curiosity itch. I also really just like building stuff. The
 job stuff just naturally followed. Now while I have plenty more projects on my
-[Github page](https://github.com/soynomm), this here is a list of the ones actively maintained & used by me.
+[Github page](https://github.com/soynomm), this here is a list of the ones actively 
+maintained and used by me.
 
 ## [Bloggo](https://github.com/soynomm/bloggo)
 
