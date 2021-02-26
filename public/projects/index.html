@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Musings on software by a guy who creates it.">
-    <title>Blog &mdash; Nomm</title>
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Projects &mdash; Nomm</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
@@ -77,49 +77,47 @@
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
 
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
 
-    <script>
-    window.addEventListener('load', () => {
-        const years = [];
-        document.querySelectorAll('.posts li').forEach(post => {
-            const year = post.getAttribute('data-year');
-
-            if (!years.includes(year)) {
-                years.push(year);
-            }
-        });
-
-        years.forEach(year => {
-            const firstPost = document.querySelector('.posts li[data-year="' + year + '"]');
-
-            firstPost.insertAdjacentHTML('beforebegin', `<li class="year">${year}</li>`);
-        })
-    });
-    </script>
 </head>
 <body>
 
 
             <div class="back">
-                <a href="https://soynomm.com/">&laquo; back</a>
+                <a href="https://soynomm.com/blog/">&laquo; back</a>
             </div>
 
-            <h1>Blog</h1>
-
-            <ul class="posts">
-                <li data-year="2021">
-                    <h3><a href="https://soynomm.com/blog/the-ghost-recruiter" title="The Ghost Recruiter">The Ghost Recruiter</a></h3>
-                    <div class="date">Feb 23</div>
-                </li>
-                <li data-year="2021">
-                    <h3><a href="https://soynomm.com/blog/creating-a-static-site-generator-in-python" title="Creating a static site generator in Python">Creating a static site generator in Python</a></h3>
-                    <div class="date">Feb 15</div>
-                </li>
-                <li data-year="2021">
-                    <h3><a href="https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore" title="I don&#x27;t want to do front-end anymore">I don&#x27;t want to do front-end anymore</a></h3>
-                    <div class="date">Feb 08</div>
-                </li>
-            </ul>
+            <div class="post">
+                <h1>Projects</h1>
+                
+                <div class="entry"><p>I'm a passionate tinkerer who got into software development not for a job, but 
+for scratching that curiosity itch. I also really just like building stuff. The
+job stuff just naturally followed. Now while I have plenty more projects on my
+<a href="https://github.com/soynomm">Github page</a>, this here is a list of the ones actively maintained &amp; used by me.</p>
+<h2><a href="https://github.com/soynomm/bloggo">Bloggo</a></h2>
+<p>A blog-oriented static site generator used for this very site, written in 
+Python. I wrote this to learn Python and to, naturally, have a tailor-made blog 
+machine that tickles my fancy. </p>
+<h2><a href="#">Splendid Speed</a></h2>
+<p>A WordPress performance plugin I made pretty much out of frustration that any 
+existing plugin was full of bloat, ads or who-knows-what. It has a total of 12
+modules to speed up your WordPress powered site, entirely free, no strings attached.</p></div>
+            </div>
 
 
 
