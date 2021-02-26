@@ -39,7 +39,7 @@
     }
 
     h1, h2 { text-transform: uppercase; }
-    h1 { display: inline; color: #111; border-bottom: 1px solid #111; margin-bottom: 20px; }
+    h1 { display: inline; color: #fff; background: #111; margin-bottom: 20px; padding: 2px 4px 2px 4px; margin-left: -2px; }
     h2 { color: #999; margin-top: 100px; margin-bottom: 20px; }
     a { color: var(--color); }
     em { color: #777; }
@@ -52,6 +52,8 @@
     /** HOME */
     .description { margin-top: 20px; }
     .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
     .posts li { display: flow-root; margin-bottom: 5px; }
     @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
     .posts li:last-child { margin-bottom: 0; }
@@ -60,7 +62,7 @@
 
     /** POST */
     .back { margin-bottom: 40px; }
-    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -100px; }}
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
     .back a { color: #bbb; }
     .post h1 { margin-bottom: 0; }
     .post .date { color: #bbb; }
@@ -87,12 +89,13 @@
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
     </style>
+
 </head>
 <body>
 
 
             <div class="back">
-                <a href="https://soynomm.com/blog">&laquo; back</a>
+                <a href="https://soynomm.com/blog/">&laquo; back</a>
             </div>
 
             <div class="post">
