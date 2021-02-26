@@ -10,11 +10,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
     <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
     <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
     :root { --color: #DF0505; }
 
     * {
-        font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
         font-size: 13px;
         font-weight: 400;
         line-height: 1.85;
@@ -39,8 +41,7 @@
     }
 
     h1, h2 { text-transform: uppercase; }
-    h1 { display: block; margin-bottom: 20px; margin-top: -2px; }
-    h1 span { text-transform: initial; font-family: sans-serif; font-size: 17px; font-weight: 800; color: #111; letter-spacing: -0.25px; background-image: linear-gradient(120deg, #ffd9d9 0%, #ffd9d9 100%); background-repeat: no-repeat; background-size: 100% 6px; background-position: 0 88%;}
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
     h2 { color: #999; margin-top: 100px; margin-bottom: 20px; }
     a { color: var(--color); }
     em { color: #777; }
@@ -64,7 +65,7 @@
     /** POST */
     .back { margin-bottom: 40px; }
     @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
-    .back a { color: #bbb; }
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
     .post h1 { margin-bottom: 0; }
     .post .date { color: #bbb; margin-top: -5px; }
     .post .entry { color: #555; margin-top: 20px; }
@@ -100,7 +101,7 @@
             </div>
 
             <div class="post">
-                <h1><span>Creating a static site generator in Python</span></h1>
+                <h1>Creating a static site generator in Python</h1>
                 <div class="date">Feb 15, 2021</div>
                 <div class="entry"><p>Usually when I start learning a new language I write some sort of a file parser. Not that I really have much utility for one, but because that seems to me to be a quick thing to build to get a general sense of how a language works. Now, <a href="https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/">as you may know</a> I've reached a point in my career where I'm doing a bit of a change and so I didn't think something as simple would really work anymore - I'd need to build something a bit more in depth.</p>
 <p>First I needed to figure out what it is exactly that I want to do going forward. I knew I wanted to do back-end, but what language? Well, my wife is currently learning Java and I've heard there's lots of jobs in it so I checked Glassdoor for Java positions, lo' and behold, 267 job postings. There's just one problem with Java and it's a big one; I don't like it much. Then, clueless as to how to continue, I went over to the <a href="https://insights.stackoverflow.com/survey/2020">Stack Overflow 2020 survey results</a> and found that <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted">the most wanted language is Python</a>. Glassdoor says 300 job postings for Python! That's good news.</p>
