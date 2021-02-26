@@ -79,7 +79,8 @@
     {{#if is_post}}{{#unless is_blog}}
     <script defer src="{{site_url}}/assets/js/highlight.pack.js"></script>
     <style>
-    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #f5f5f5;padding: 20px;margin-left: -20px; }
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
     .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
     .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
     .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
