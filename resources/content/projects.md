@@ -4,7 +4,7 @@ description: A variety of software projects that I'm more-or-less actively worki
 ---
 
 I'm a passionate tinkerer who got into software development not for a job, but 
-for scratching that curiosity itch. I also really just like building stuff. The
+for scratching that curiosity itch. I also really like building stuff. The
 job just naturally followed. Now while I have plenty more projects on my
 [Github page](https://github.com/soynomm), this here is a list of the ones actively 
 maintained.
