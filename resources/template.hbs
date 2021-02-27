@@ -132,10 +132,11 @@
     {{/if}}
 
     {{#if is_post}}
+        <div class="back">
+            <a href="javascript:window.history.back();">&laquo; back</a>
+        </div>
+
         {{#if is_blog}}
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
 
             <h1>Blog</h1>
 
@@ -151,9 +152,6 @@
             </ul>
 
         {{else}}
-            <div class="back">
-                <a href="{{site_url}}/blog/">&laquo; back</a>
-            </div>
 
             <div class="post">
                 <h1>{{title}}</h1>
