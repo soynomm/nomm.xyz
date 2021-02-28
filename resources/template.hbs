@@ -54,8 +54,8 @@
 
     /** HOME */
     .description { margin-top: 20px; }
-    .avatar { width: 75px; margin-top: 60px; }
-    .avatar img { width: 100%; height: auto; }
+    .nomm { width: 100%; }
+    .nomm img { width: 100%; height: auto; }
     .posts { list-style: none; margin-top: 20px; }
     .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
     .posts li.year:first-child { margin-top: -25px; }
@@ -123,6 +123,9 @@
 
     {{#if is_home}}
     <h1>I'm Nomm</h1>
+    <div class="nomm">
+        <img src="./assets/images/nomm.png" alt="Avatar" />
+    </div>
     <p class="description">
         A software engineer living in Lisbon, Portugal. I spend my days at
         <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript.
@@ -132,9 +135,6 @@
         nomm@soynomm.com</a>.
     </p>
 
-    <div class="avatar">
-        <img src="{{site_url}}/assets/images/avatar.png" alt="Avatar" />
-    </div>
     {{/if}}
 
     {{#if is_post}}
