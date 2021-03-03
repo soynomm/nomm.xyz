@@ -9,15 +9,16 @@ date: 2021-03-03
 marked the last day as one, and also the last day at [GPM](https://www.greenpowermonitor.com/), 
 where I had spent my last 2 and a half years. The first two years I spent almost entirely
 writing ClojureScript, which I must say is a joy to write, and the rest writing TypeScript, 
-which to me is, like my colleagues know, a poor man's typed language.
+which to me is like my colleagues know, a poor man's typed language.
 
 **Funny story about GPM:** I was new in Barcelona and needed a job, so I applied to a 
 few JavaScript positions, one of which was GPM. I had just one call with them 
-after which I received a formal offer. Once arriving to the offices to sign my 
+after which I received a formal offer. Once arriving in the offices to sign my 
 contract I found out that I will be doing ClojureScript instead, which if you don't know 
 is about as different from JavaScript as a thing could be. I also found out that 
-they had forgotten to send me a test job and that it was obviously a bit late for that. 
-Seems all worked out however.
+they had forgotten to send me a test job and that it was a bit late for that. 
+Seems all worked out despite these things, and if Clojure were a bit more popular, I'd probably
+be looking to do back-end Clojure instead of Python right now.
 
 I have no bad words about the company, or the people I've worked with. In fact, I 
 was told that if I ever find myself in Barcelona again and would like to work for
