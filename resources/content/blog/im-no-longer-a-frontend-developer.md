@@ -1,6 +1,6 @@
 ---
 title: I'm no longer a front-end developer
-description: ...
+description: Reflecting on my time at GPM and a path forward as an engineer.
 public: true
 date: 2021-03-03
 ---
