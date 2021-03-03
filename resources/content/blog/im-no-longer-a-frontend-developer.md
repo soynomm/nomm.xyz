@@ -48,4 +48,4 @@ side projects, and I've done well for myself thus far, and
 that's the only measure of success that matters to me. The way I see the world, 
 it's the only measure of success that should matter to anyone. 
 
-Here's to the next 10 years of software development!
+Here's to the next 10 years of software development, this time as a back-end developer.
