@@ -39,6 +39,7 @@ structures. Believe it or not in my 10 years as an engineer, never really needed
 too much of that. That said, I'm determined to become a back-end expert, and par for the course, 
 expert in data structures and algo's as well. After all, I've heard that it's 
 impossible to land a back-end job without knowing how to revert different types of trees.
+Obviously you'll need a shovel.
 
 I know some of you might cringe reading this and think I must not be so bright, 
 and perhaps you are right, but I managed to learn all of this on my own with no
