@@ -5,7 +5,7 @@ public: true
 date: 2021-03-03
 ---
 
-[True to my word](/blog/i-dont-want-to-do-frontend-anymore/), as of today I'm no longer a front-end developer. Yesterday
+[True to my word](https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/), as of today I'm no longer a front-end developer. Yesterday
 marked the last day as one, and also the last day at [GPM](https://www.greenpowermonitor.com/), 
 where I had spent my last 2 and a half years. The first two years I spent almost entirely
 writing ClojureScript, which I must say is a joy to write, and the rest writing TypeScript, 
@@ -26,7 +26,7 @@ the door is always open - and while it would certainly have to be back-end for m
 I really wouldn't mind. I've met amazing people there and will not miss a chance to 
 invite them for a drink whenever I find myself in Spain again. 
 
-So what's next for me? Well, if you read my post [on creating a static site generator](/blog/creating-a-static-site-generator-in-python/), 
+So what's next for me? Well, if you read my post [on creating a static site generator](https://soynomm.com/blog/creating-a-static-site-generator-in-python/), 
 you'd probably guess it was Python, and you'd guess right. I've done enough of 
 job market, developer happiness, and would-i-like-it research to be able to guess
 with a pretty high probability that I'd be happy writing Python. I mean I of course
