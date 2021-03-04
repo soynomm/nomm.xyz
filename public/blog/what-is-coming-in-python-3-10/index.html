@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A short overview of some of the more notable changes coming in Python 3.10 that I find useful">
+    <title>What&#x27;s coming in Python 3.10 &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root { --color: #DF0505; }
+
+    * {
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    h2 a { font-weight: 500; }
+    a { color: var(--color); }
+    em { color: #777; }
+    strong { color: #111; font-weight: 600; }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    strike { opacity: .5; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .nomm { width: 100%; }
+    .nomm img { width: 100%; height: auto; }
+    .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    .social-icon:hover { opacity: .75; transition: all 0.25s; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 100px); }
+    .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; margin-top: -5px; }
+    .post .entry { color: #555; margin-top: 20px; }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    </style>
+
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
+
+</head>
+<body>
+
+
+
+                <div class="back">
+                    <a href="https://soynomm.com/blog/">&laquo; back</a>
+                </div>
+
+            <div class="post">
+                <h1>What&#x27;s coming in Python 3.10</h1>
+                <div class="date">Mar 04, 2020</div>
+                <div class="entry"><p>Python is evolving at a comfortable pace, if you ask me. Some folks may be <a href="https://towardsdatascience.com/why-python-is-not-the-programming-language-of-the-future-30ddc5339b66">a bit negative towards Python</a>, but I haven't been in this ecosystem long enough to have grown bitter just yet. And as a non-bitter person, I can look at Python for what it is rather than what I would like it to be. Also, <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">from what I can gather</a> it seems that Python should be just fine as a bread-maker in the 10 years to come.</p>
+<p>As a newly babptised Pythonista I try to keep myself up to date on all-things-Python, to be a better engineer, and I figured I'll review all the updates that are coming in Python 3.10 that I myself would most definitely use.</p>
+<h2>Parenthesized context managers</h2>
+<p>You can have comma-separated, multi-line context managers, like this:</p>
+<pre><code class="language-python">with (
+    open('file1.txt', 'r') as file1,
+    open('file2.txt', 'r') as file2
+):
+</code></pre>
+<p>This is very cool because previously if you wanted to have multi-line context managers you had to resort to using a backslash to wrap the lines, like this:</p>
+<pre><code class="language-python">with open('file1.txt', 'r') as file1, \
+    open('file2.txt', 'r') as file2:
+</code></pre>
+<p>And while it works just fine, it doesn't exactly <em>look</em> nice. I'd say this is a very welcome addition.</p>
+<h2>Better error messages in the parser</h2>
+<p>Whenever you forgot a closing parentheses or brackets, the parser will now points you to the exact place you made an error by highlighting that place in code, allowing you to fix it much quicker. Long gone are the days of spending 2 hours trying to debug a problem that was all solved with a correct comma placement!</p>
+<h2>New Type Union Operator</h2>
+<p>Now personally I don't really care for types in small projects - especially ones that will only ever be used by you, but I do use them in projects that are open source and intended for use by other people as well as it helps make it clear what something does. So any type-related enhancements are greatly appreciated so long as it doesn't turn the entire language into a Frankenstein's monster like TypeScript has turned itself into.</p>
+<p>The new type union operator is a gread addition in my opinion, because it improves consistency in expressing types. Previously I had to write code like this to express union types:</p>
+<pre><code class="language-python">from typing import Union
+
+def func_name(): Union[dict, str, None]:
+    # can return either dict, str or None
+</code></pre>
+<p>Whereas now I can write code like this:</p>
+<pre><code class="language-python">def func_name(): dict | str | None:
+    # can return either dict, str or None
+</code></pre>
+<p>Keep in mind however that if you are using PyCharm like I am then as of writing this new type union operator is not yet supported.</p>
+<h2>Structural Pattern Matching</h2>
+<p>Personally, I can't believe that it's 2021 and I'm learning that Python <em>only now</em> gets what is basically a switch-case statement. Well, a switch-case statement that has a few more tricks up it sleeve than I've seen in other languages, but a switch-case statement nonetheless. I'll definitely be using this sooner rather than later. You can read more on the specifics of Structural Pattern Matching in Python <a href="https://www.python.org/dev/peps/pep-0634/">here</a>.</p></div>
+            </div>
+
+
+
+</body>
+</html>
