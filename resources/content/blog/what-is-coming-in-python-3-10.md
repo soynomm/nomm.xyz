@@ -1,7 +1,7 @@
 ---
 title: What's coming in Python 3.10
 description: A short overview of some of the more notable changes coming in Python 3.10 that I find useful
-status: public
+public: true
 date: 2020-03-04
 ---
 
