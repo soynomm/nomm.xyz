@@ -2,7 +2,7 @@
 title: What's coming in Python 3.10
 description: A short overview of some of the more notable changes coming in Python 3.10 that I find useful
 public: true
-date: 2020-03-04
+date: 2021-03-04
 ---
 
 Python is evolving at a comfortable pace, if you ask me. Some folks may be [a bit negative towards Python](https://towardsdatascience.com/why-python-is-not-the-programming-language-of-the-future-30ddc5339b66), but I haven't been in this ecosystem long enough to have grown bitter just yet. And as a non-bitter person, I can look at Python for what it is rather than what I would like it to be. Also, [from what I can gather](https://stackoverflow.blog/2017/09/06/incredible-growth-python/) it seems that Python should be just fine as a bread-maker in the 10 years to come.
