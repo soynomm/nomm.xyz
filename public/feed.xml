@@ -11,14 +11,14 @@
             <atom:link href="https://soynomm.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
             <link>https://soynomm.com</link>
             <description>Nomm is a software engineer, this is his personal site and blog.</description>
-            <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate>
+            <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate>
             <language>en</language>
             <sy:updatePeriod>hourly</sy:updatePeriod>
             <sy:updateFrequency>1</sy:updateFrequency>
             <item>
                 <title>What&#x27;s coming in Python 3.10</title>
                 <link>https://soynomm.com/blog/what-is-coming-in-python-3-10</link>
-                <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+                <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
                 <guid isPermaLink="false">https://soynomm.com/blog/what-is-coming-in-python-3-10</guid>
                 <description>A short overview of some of the more notable changes coming in Python 3.10 that I find useful</description>
                 <content:encoded><![CDATA[<p>Python is evolving at a comfortable pace, if you ask me. Some folks may be <a href="https://towardsdatascience.com/why-python-is-not-the-programming-language-of-the-future-30ddc5339b66">a bit negative towards Python</a>, but I haven't been in this ecosystem long enough to have grown bitter just yet. And as a non-bitter person, I can look at Python for what it is rather than what I would like it to be. Also, <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">from what I can gather</a> it seems that Python should be just fine as a bread-maker in the 10 years to come.</p>
