@@ -16,7 +16,7 @@ A blog-oriented static site generator used for this very site, written in
 Python. I wrote this to learn Python and to, naturally, have a tailor-made blog 
 machine that tickles my fancy.
 
-**Status:** actively developed.
+**Status:** in active development.
 
 ## [Splendid Speed](https://wordpress.org/plugins/splendid-speed/)
 
