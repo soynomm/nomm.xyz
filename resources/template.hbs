@@ -144,7 +144,7 @@
         <a href="https://twitter.com/soynomm" class="social-icon">
             <img src="./assets/images/twitter.svg" alt="Twitter">
         </a>
-        <a href="mailto:nomm@hey.com" class="social-icon">
+        <a href="mailto:{{email}}" class="social-icon">
             <img src="./assets/images/mail.svg" alt="E-mail">
         </a>
     </p>
@@ -161,13 +161,16 @@
             <h1>Blog</h1>
 
             <ul class="posts">
-            {{#posts}}
-                {{#if public}}
-                <li data-year="{{format_date date "%Y"}}">
-                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                    <div class="date">{{format_date date "%b %d"}}</div>
-                </li>
-                {{/if}}
+            {{#posts_archive}}
+                <li class="year">{{this}}</li>
+                {{#this}}
+                    {{#if public}}
+                    <li data-year="{{format_date date "%Y"}}">
+                        <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
+                        <div class="date">{{format_date date "%b %d"}}</div>
+                    </li>
+                    {{/if}}
+                {{/this}}
             {{/posts}}
             </ul>
 

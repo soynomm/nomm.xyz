@@ -136,12 +136,15 @@
 
             <ul class="posts">
             {{#posts}}
-                {{#public}}
-                <li>
-                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                    <div class="date">{{date}}</div>
-                </li>
-                {{/public}}
+                <li class="year">{{year}}</li>
+                {{#entries}}
+                    {{#public}}
+                    <li>
+                        <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
+                        <div class="date">{{pretty_date_without_year}}</div>
+                    </li>
+                    {{/public}}
+                {{/entries}}
             {{/posts}}
             </ul>
 
