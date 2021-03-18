@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Front-end is not something that makes me happy anymore, in large part due to its complexity.">
+    <title>I don&#x27;t want to do front-end anymore &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root { --color: #DF0505; }
+
+    * {
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    h2 a { font-weight: 500; }
+    a { color: var(--color); }
+    em { color: #777; }
+    strong { color: #111; font-weight: 600; }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    strike { opacity: .5; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .nomm { width: 100%; }
+    .nomm img { width: 100%; height: auto; }
+    .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    .social-icon:hover { opacity: .75; transition: all 0.25s; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 100px); }
+    .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; margin-top: -5px; }
+    .post .entry { color: #555; margin-top: 20px; }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    </style>
+
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
+
+
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"soynomm",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>
+
+</head>
+<body>
+
+
+
+                <div class="back">
+                    <a href="https://soynomm.com/blog/">&laquo; back</a>
+                </div>
+
+            <div class="post">
+                <h1>I don&#x27;t want to do front-end anymore</h1>
+                <div class="date">Feb 08, 2021</div>
+                <div class="entry"><p>I started coding when I was 14, around 2007 or so. The very first thing I wrote was HTML, then CSS. I liked
+making stupid little web pages containing youtube embeds and guest books (anyone remembers those?) full of 
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee">marquees</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink">blinks</a> 
+and gifs. Lots of gifs. The pages were very simple, but joyful to make and also to use. At the time I had no idea that 
+you could make any money with making web pages, I simply thought it was a silly hobby people could have.</p>
+<p>Fast-forward 3 years I got my first few gigs as a web developer. By then I was pretty good at HTML and CSS already, 
+had dabbled enough with PHP to know my way around most sticky problems I would find myself in and while I didn't 
+really know much of vanilla JavaScript, it was okay, because everyone used almost exclusively <a href="https://jquery.com/">jQuery</a> anyway. Yet still, 
+the websites were rather simple and joyful to make.</p>
+<p>It was easy to get started, too - you just created the files and refreshed the page. HTML? PHP? JavaScript? Just create the
+file and save it, then refresh the browser. Rinse and repeat until you are happy with the result. But then, almost
+out of nowhere, something changed. At first, it came slowly and before it could even speed up, it was already here.
+<strong>The complicated web was here</strong>.</p>
+<p>Nowadays I make a living mainly with JavaScript and TypeScript using React.js as a front-end framework. That's right, 
+front-ends are so complex they now need frameworks to be able to manage their seemingly infinite component hierarchies.
+JavaScript no longer is liked by the community, so the community created a poor man's version of a typed language which 
+duct-tapes around an <a href="https://whydoesitsuck.com/why-does-javascript-suck/">already poorly made language</a>. </p>
+<p>Starting a new project? Make sure to write your project idea down because by the time you are finished setting up the vast
+boilerplate you have probably forgotten it. Vast boilerplate? Oh yeah, you better set-up your project with <a href="https://www.typescriptlang.org/">TypeScript</a>, 
+<a href="https://eslint.org/">ESlint</a>, <a href="https://webpack.js.org/">Webpack</a> and <a href="https://babeljs.io/">Babel</a>, because 
+if you don't then obviously you haven't learned anything since 2005 and suck. Don't have <a href="https://www.npmjs.com/">NPM</a>? Better install that, too, 
+because nobody installs libraries without a package manager anymore. Oh and while you're at it, install also <a href="https://yarnpkg.com/">Yarn</a>, 
+because why not make use of two package managers at the same time. <em>Phew</em>, you did all that? Damn, that's commitment! 
+You can finally write what is essentially just HTML and JavaScript!</p>
+<p>Now, don't forget we also want to style our project, but if you thought you could get away with writing good ol' CSS, 
+you were wrong. We no longer write CSS, because it's lame. We now write <a href="https://sass-lang.com/">SCSS</a> instead, 
+so that we could write dynamic stylesheets that convert to CSS, because <a href="https://hospodarets.com/you-might-not-need-a-css-preprocessor">of course 99% of the web needs that</a>. </p>
+<p>But enough of the hating. If I wanted I could hate on anything most likely, and the web has come a long way since 2007, 
+in lots of good ways, and I don't want to discredit that. I suppose with the increase of complexity in what we want to 
+achieve on the web the stack to achieve it with has had to also increase in complexity. For me, personally, it's 
+too much. I want to have a personal life and not have to spend my nights reading up on some new flavour of *.js in 
+fear that if I don't I would soon be made irrelevant. I don't want to learn nor use a million different tools. I don't want 
+to know a bit about everything and a lot about nothing. </p>
+<p>Thus, I don't want to do front-end development anymore. The joy is gone. I've given in my resignation at my current place of
+employment and will be seeking an exclusively back-end role for my next adventure, starting April. The language doesn't 
+matter much to me, I know enough of them to know that they are all very similar and thus easy enough to learn. If you know of a 
+good opportunity, <a href="mailto:nomm@soynomm.com">let me know</a>.</p></div>
+            </div>
+
+
+
+</body>
+</html>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
-    <title>{{#if is_home}}{{site_title}}{{else}}{{title}} &mdash; Nomm{{/if}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="A variety of software projects that I&#x27;m more-or-less actively working on.">
+    <title>Projects &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -82,8 +82,7 @@
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
 
-    {{#if is_post}}{{#unless is_blog}}
-    <script defer src="{{site_url}}/assets/js/highlight.pack.js"></script>
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
     @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
@@ -99,99 +98,40 @@
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
     </style>
-    {{/unless}}{{/if}}
 
-    {{#if is_post}}{{#if is_blog}}
-    <script>
-    window.addEventListener('load', () => {
-        const years = [];
-        document.querySelectorAll('.posts li').forEach(post => {
-            const year = post.getAttribute('data-year');
-
-            if (!years.includes(year)) {
-                years.push(year);
-            }
-        });
-
-        years.forEach(year => {
-            const firstPost = document.querySelector('.posts li[data-year="' + year + '"]');
-
-            firstPost.insertAdjacentHTML('beforebegin', `<li class="year">${year}</li>`);
-        })
-    });
-    </script>
-    {{/if}}{{/if}}
 
     <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"soynomm",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>
 
 </head>
-<body{{#if is_home}} class="home"{{/if}}>
+<body>
 
-    {{#if is_home}}
-    <h1>I'm Nomm</h1>
-    <div class="nomm">
-        <img src="./assets/images/nomm.png" alt="Avatar" />
-    </div>
-    <p class="description">
-        A software engineer living in Lisbon, Portugal. <strike>I spend my days at
-        <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript.</strike>
-        On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
-        you're interested in subscribing.
-        <br><br>
-        <a href="https://github.com/soynomm" class="social-icon">
-            <img src="./assets/images/github.svg" alt="Github">
-        </a>
-        <a href="https://twitter.com/soynomm" class="social-icon">
-            <img src="./assets/images/twitter.svg" alt="Twitter">
-        </a>
-        <a href="mailto:{{email}}" class="social-icon">
-            <img src="./assets/images/mail.svg" alt="E-mail">
-        </a>
-    </p>
 
-    {{/if}}
 
-    {{#if is_post}}
-        {{#if is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}}
-                {{#if public}}
-                <li data-year="{{format_date date "%Y"}}">
-                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                    <div class="date">{{format_date date "%b %d"}}</div>
-                </li>
-                {{/if}}
-            {{/posts}}
-            </ul>
-
-        {{else}}
-
-            {{#if date}}
                 <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
+                    <a href="https://soynomm.com/">&laquo; back</a>
                 </div>
-            {{else}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/if}}
 
             <div class="post">
-                <h1>{{title}}</h1>
-                {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
-                <div class="entry">{{{entry}}}</div>
+                <h1>Projects</h1>
+                
+                <div class="entry"><p>I'm a passionate tinkerer who got into software development not for a job, but 
+for scratching that curiosity itch. I also really like building stuff. The
+job just naturally followed. Now while I have plenty more projects on my
+<a href="https://github.com/soynomm">Github page</a>, this here is a list of the ones that are more actively 
+maintained.</p>
+<h2><a href="https://github.com/soynomm/bloggo">Bloggo</a></h2>
+<p>A blog-oriented static site generator used for this very site, written in 
+Python. I wrote this to learn Python and to, naturally, have a tailor-made blog 
+machine that tickles my fancy.</p>
+<p><strong>Status:</strong> in active development.</p>
+<h2><a href="https://wordpress.org/plugins/splendid-speed/">Splendid Speed</a></h2>
+<p>A WordPress performance plugin I made pretty much out of frustration that any 
+existing plugin was full of bloat, ads or who-knows-what. It has a total of 12
+modules to speed up your WordPress powered site, entirely free, no strings attached.</p>
+<p><strong>Status:</strong> feature-complete, in maintenance mode. Think you could make something more of it? <a href="mailto:nomm@hey.com">Get in touch</a> and I might just gift it to you, since I'm no longer interested in PHP nor WordPress.</p></div>
             </div>
 
-        {{/if}}
 
-    {{/if}}
 
 </body>
 </html>

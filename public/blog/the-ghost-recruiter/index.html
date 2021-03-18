@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
-    <title>{{#if is_home}}{{site_title}}{{else}}{{title}} &mdash; Nomm{{/if}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="A story about a particular type of person who gives hope and then takes it away.">
+    <title>The Ghost Recruiter &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -82,8 +82,7 @@
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
 
-    {{#if is_post}}{{#unless is_blog}}
-    <script defer src="{{site_url}}/assets/js/highlight.pack.js"></script>
+    <script defer src="https://soynomm.com/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
     @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
@@ -99,99 +98,33 @@
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
     </style>
-    {{/unless}}{{/if}}
 
-    {{#if is_post}}{{#if is_blog}}
-    <script>
-    window.addEventListener('load', () => {
-        const years = [];
-        document.querySelectorAll('.posts li').forEach(post => {
-            const year = post.getAttribute('data-year');
-
-            if (!years.includes(year)) {
-                years.push(year);
-            }
-        });
-
-        years.forEach(year => {
-            const firstPost = document.querySelector('.posts li[data-year="' + year + '"]');
-
-            firstPost.insertAdjacentHTML('beforebegin', `<li class="year">${year}</li>`);
-        })
-    });
-    </script>
-    {{/if}}{{/if}}
 
     <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"soynomm",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>
 
 </head>
-<body{{#if is_home}} class="home"{{/if}}>
+<body>
 
-    {{#if is_home}}
-    <h1>I'm Nomm</h1>
-    <div class="nomm">
-        <img src="./assets/images/nomm.png" alt="Avatar" />
-    </div>
-    <p class="description">
-        A software engineer living in Lisbon, Portugal. <strike>I spend my days at
-        <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript.</strike>
-        On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
-        you're interested in subscribing.
-        <br><br>
-        <a href="https://github.com/soynomm" class="social-icon">
-            <img src="./assets/images/github.svg" alt="Github">
-        </a>
-        <a href="https://twitter.com/soynomm" class="social-icon">
-            <img src="./assets/images/twitter.svg" alt="Twitter">
-        </a>
-        <a href="mailto:{{email}}" class="social-icon">
-            <img src="./assets/images/mail.svg" alt="E-mail">
-        </a>
-    </p>
 
-    {{/if}}
 
-    {{#if is_post}}
-        {{#if is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}}
-                {{#if public}}
-                <li data-year="{{format_date date "%Y"}}">
-                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                    <div class="date">{{format_date date "%b %d"}}</div>
-                </li>
-                {{/if}}
-            {{/posts}}
-            </ul>
-
-        {{else}}
-
-            {{#if date}}
                 <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
+                    <a href="https://soynomm.com/blog/">&laquo; back</a>
                 </div>
-            {{else}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/if}}
 
             <div class="post">
-                <h1>{{title}}</h1>
-                {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
-                <div class="entry">{{{entry}}}</div>
+                <h1>The Ghost Recruiter</h1>
+                <div class="date">Feb 23, 2021</div>
+                <div class="entry"><p>It's a Friday afternoon and you've just clocked out of a long work week. Work has been running you down lately. Maybe it's that you haven't had a decent vacation in a long time or maybe you're just tired of working on the same ol', same ol'. Maybe, just maybe, you could use a change. Suddenly, your phone lights up with a notification from your LinkedIn app with a title saying; "Looking for a new opportunity?", as if you were wishing, and a genie was granting. </p>
+<p>Now you write this recruiter saying something like; "Wow how did you know?" and; "tell me more". The recruiter continues to give you information on this amazing company that is changing the world in a variety of ways and how you could contribute to the betterment of the world and sleep soundly at night knowing your hard work actually makes a difference. This company has an amazing work culture, uses all the latest, greatest, and just best tools. And it doesn't stop there.</p>
+<p>Of course, you say yes. This is what you have been waiting for, even if unknowingly. Your subconscious has been longing for a change of pace to your otherwise pretty mundane existence. This is it. You feel re-energized, ready for anything. The recruiter tells you he has forwarded your application and that you'd be a perfect fit, and he'll keep you posted with an update as soon as humanly possible. You even start doing some algorithm exercises to make yourself the best you that you can be when the technical interview time arrives. You're unstoppable. </p>
+<p>A few days go by and the recruiter not only writes you - but calls you. He goes on to reassure you that good things are coming and that your application is being reviewed already. The next step would be to have a call with the hiring manager and then have the technical screen. Everything is so damn close to becoming true that you can almost taste it, smell it. </p>
+<p>Except that the next step never happens. You never hear back from the recruiter or the company in question. Feelings of great prosperity are quickly replaced by a sense of hollow sadness. "What did I do wrong?", you ask yourself. "Was it my personality?", "Maybe my resume wasn't strong enough?", you contemplate. Before you fall into complete emotional disarray, you write to the recruiter, asking for an update. Days go by, nothing comes back. You'll be fine, of course. Shit like this happens. But every time it does, it takes a piece of you with it as the opportunity that could've been, wasn't. A peace of naive optimism, a good piece. And it replaces it with cold skepticism.</p>
+<hr />
+<p>The above is a somewhat exaggerated (for dramatic purposes) version of what really happens, but I, like many, have experienced this and while sure, the more you experience it the less you care about this sort of thing, you can't deny the negative effect it has on you and other people. </p>
+<p>If you're a recruiter reading this, please don't be an asshole. If the person applying wasn't a suitable candidate, just tell them. And if you can, tell them also why. It may be uncomfortable to do so, but you'll be a better person for it and the candidate knows what to improve upon so that maybe the next opportunity that comes by will be <em>the</em> opportunity.</p></div>
             </div>
 
-        {{/if}}
 
-    {{/if}}
 
 </body>
 </html>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#if description}}{{description}}{{else}}{{site_description}}{{/if}}">
-    <title>{{#if is_home}}{{site_title}}{{else}}{{title}} &mdash; Nomm{{/if}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://soynomm.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://soynomm.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://soynomm.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://soynomm.com/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://soynomm.com/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -82,52 +82,13 @@
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
 
-    {{#if is_post}}{{#unless is_blog}}
-    <script defer src="{{site_url}}/assets/js/highlight.pack.js"></script>
-    <style>
-    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
-    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
-    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
-    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
-    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
-    .hljs-literal { color: #0184bb; }
-    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }
-    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
-    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
-    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
-    .hljs-emphasis { font-style: italic; }
-    .hljs-strong { font-weight: bold; }
-    .hljs-link { text-decoration: underline; }
-    </style>
-    {{/unless}}{{/if}}
 
-    {{#if is_post}}{{#if is_blog}}
-    <script>
-    window.addEventListener('load', () => {
-        const years = [];
-        document.querySelectorAll('.posts li').forEach(post => {
-            const year = post.getAttribute('data-year');
-
-            if (!years.includes(year)) {
-                years.push(year);
-            }
-        });
-
-        years.forEach(year => {
-            const firstPost = document.querySelector('.posts li[data-year="' + year + '"]');
-
-            firstPost.insertAdjacentHTML('beforebegin', `<li class="year">${year}</li>`);
-        })
-    });
-    </script>
-    {{/if}}{{/if}}
 
     <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"soynomm",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>
 
 </head>
-<body{{#if is_home}} class="home"{{/if}}>
+<body class="home">
 
-    {{#if is_home}}
     <h1>I'm Nomm</h1>
     <div class="nomm">
         <img src="./assets/images/nomm.png" alt="Avatar" />
@@ -135,7 +96,7 @@
     <p class="description">
         A software engineer living in Lisbon, Portugal. <strike>I spend my days at
         <a href="https://greenpowermonitor.com">GreenPowerMonitor</a> writing mostly ClojureScript and TypeScript.</strike>
-        On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
+        On this website you can find my <a href="https://soynomm.com/projects/">projects</a> and <a href="https://soynomm.com/blog/">blog</a>. The blog has a <a href="https://soynomm.com/feed.xml">feed</a>, if
         you're interested in subscribing.
         <br><br>
         <a href="https://github.com/soynomm" class="social-icon">
@@ -144,54 +105,12 @@
         <a href="https://twitter.com/soynomm" class="social-icon">
             <img src="./assets/images/twitter.svg" alt="Twitter">
         </a>
-        <a href="mailto:{{email}}" class="social-icon">
+        <a href="mailto:soynomm@icloud.com" class="social-icon">
             <img src="./assets/images/mail.svg" alt="E-mail">
         </a>
     </p>
 
-    {{/if}}
 
-    {{#if is_post}}
-        {{#if is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}}
-                {{#if public}}
-                <li data-year="{{format_date date "%Y"}}">
-                    <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                    <div class="date">{{format_date date "%b %d"}}</div>
-                </li>
-                {{/if}}
-            {{/posts}}
-            </ul>
-
-        {{else}}
-
-            {{#if date}}
-                <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
-                </div>
-            {{else}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/if}}
-
-            <div class="post">
-                <h1>{{title}}</h1>
-                {{#if date}}<div class="date">{{format_date date "%b %d, %Y"}}</div>{{/if}}
-                <div class="entry">{{{entry}}}</div>
-            </div>
-
-        {{/if}}
-
-    {{/if}}
 
 </body>
 </html>
