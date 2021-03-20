@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    >
+<channel>
+    <title>{{site_title}}</title>
+    <atom:link href="{{site_url}}/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>{{site_url}}</link>
+    <description>{{site_description}}</description>
+    <lastBuildDate>{{last_update}}</lastBuildDate>
+    <language>en</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    {{#posts}}
+    {{#entries}}
+    <item>
+        <title>{{title}}</title>
+        <link>{{url}}</link>
+        <pubDate>{{date}}</pubDate>
+        <guid isPermaLink="false">{{url}}</guid>
+        <description>{{description}}</description>
+        <content:encoded><![CDATA[{{{entry}}}]]></content:encoded>
+    </item>
+    {{/entries}}
+    {{/posts}}
+</channel>
+</rss>

@@ -118,7 +118,7 @@
         <a href="https://twitter.com/soynomm" class="social-icon">
             <img src="./assets/images/twitter.svg" alt="Twitter">
         </a>
-        <a href="mailto:nomm@hey.com" class="social-icon">
+        <a href="mailto:{{email}}" class="social-icon">
             <img src="./assets/images/mail.svg" alt="E-mail">
         </a>
     </p>
@@ -152,20 +152,20 @@
 
         {{^post.is_blog}}
 
-            {{#post.is_date}}
+            {{#post.date}}
                 <div class="back">
                     <a href="{{site_url}}/blog/">&laquo; back</a>
                 </div>
-            {{/post.is_date}}
-            {{^post.is_date}}
+            {{/post.date}}
+            {{^post.date}}
                 <div class="back">
                     <a href="{{site_url}}/">&laquo; back</a>
                 </div>
-            {{/post.is_date}}
+            {{/post.date}}
 
             <div class="post">
                 <h1>{{post.title}}</h1>
-                {{#post.date}}<div class="date">{{post.date}}</div>{{/post.date}}
+                {{#post.date}}<div class="date">{{post.pretty_date}}</div>{{/post.date}}
                 <div class="entry">{{{post.entry}}}</div>
             </div>
 
