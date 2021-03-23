@@ -13,7 +13,6 @@ public class Main {
 		// we have the arguments in args
 	}
 }
-
 ```
  
 Following the logic that I have a flag and that flag has an optional value, like `appName --flag {value}`. I'd have the command at index 0, its value (if it has any) on index 1. Following command on index 2 and its value on index 3, and so on. It's pretty straight-forward, and so is my solution to this. Let's get to it.
