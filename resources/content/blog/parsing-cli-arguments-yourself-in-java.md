@@ -1,6 +1,7 @@
 ---
 title: Parsing CLI arguments yourself in Java
 description: Not everything has to be solved with a dependency - just like parsing CLI arguments can be done with a simple, straight-forward helper class that I can write myself.
+public: true
 date: 2021-03-23
 ---
 
