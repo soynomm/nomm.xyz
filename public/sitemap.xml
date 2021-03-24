@@ -6,41 +6,6 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://soynomm.com/blog</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/projects</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/blog/the-ghost-recruiter</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/blog/im-no-longer-a-frontend-developer</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/blog/parsing-cli-arguments-yourself-in-java</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/blog/creating-a-static-site-generator-in-python</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
         <loc>https://soynomm.com/blog/parsing-cli-arguments-yourself-in-java</loc>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
