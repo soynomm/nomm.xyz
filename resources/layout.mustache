@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
     :root { --color: #DF0505; }
+    @media (prefers-color-scheme: dark) { :root { --color: #f00505; } }
 
     * {
         font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
@@ -58,7 +59,7 @@
     pre code { color: #333; border-bottom:  0; overflow: auto; }
     strike { opacity: .5; }
     body { width: 550px; color: #333; margin: 50px auto; }
-    @media (prefers-color-scheme: dark) { body { color:  #eee; } }
+    @media (prefers-color-scheme: dark) { body { color:  #e5e5e5; } }
     @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
 
     /** HOME */
@@ -85,7 +86,7 @@
     .post .date { color: #bbb; margin-top: -5px; }
     @media (prefers-color-scheme: dark) { .post .date  { color:  #555; } }
     .post .entry { color: #555; margin-top: 20px; }
-    @media (prefers-color-scheme: dark) { .post  .entry { color: #eee; } }
+    @media (prefers-color-scheme: dark) { .post  .entry { color: #e5e5e5; } }
     .post .entry p { margin-top: 20px; margin-bottom: 20px; }
     .post .entry h2,
     .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
@@ -97,7 +98,7 @@
     <script src="{{site_url}}/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
-    @media (prefers-color-scheme: dark) { .hljs { color: #eee; background: #111; border: 1px solid #333; } }
+    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
     @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
     .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
     .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
