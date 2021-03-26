@@ -33,6 +33,8 @@
         justify-content: center;
     }
 
+    @media (prefers-color-scheme: dark) { html { background:  #111; } }
+
     @media all and (max-width: 600px) { html { display: block; }}
 
     body.home {
@@ -42,22 +44,27 @@
 
     h1, h2 { text-transform: uppercase; }
     h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    @media (prefers-color-scheme: dark) { h1 { color:  #fff; } }
     h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    @media (prefers-color-scheme: dark) { h2 { color: #555; } }
     h2 a { font-weight: 500; }
     a { color: var(--color); }
     em { color: #777; }
+    @media (prefers-color-scheme: dark) { em { color:  #777; } }
     strong { color: #111; font-weight: 600; }
+    @media (prefers-color-scheme: dark) { strong  { color:  #fff; } }
     code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    @media (prefers-color-scheme: dark) { code { color: #bbb; border-bottom: 1px dashed #555; } }
     pre code { color: #333; border-bottom:  0; overflow: auto; }
     strike { opacity: .5; }
     body { width: 550px; color: #333; margin: 50px auto; }
+    @media (prefers-color-scheme: dark) { body { color:  #eee; } }
     @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
 
     /** HOME */
     .description { margin-top: 20px; }
-    .nomm { width: 100%; }
-    .nomm img { width: 100%; height: auto; }
     .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    @media (prefers-color-scheme: dark) { .social-icon { filter: invert(1); } }
     .social-icon:hover { opacity: .75; transition: all 0.25s; }
     .posts { list-style: none; margin-top: 20px; }
     .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
@@ -67,24 +74,30 @@
     .posts li:last-child { margin-bottom: 0; }
     .posts li h3 { float: left; width: calc(100% - 100px); }
     .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { .posts li .date  { color: #555; } }
 
     /** POST */
     .back { margin-bottom: 40px; }
     @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
     .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    @media (prefers-color-scheme: dark) { .back a { color:  #555; } }
     .post h1 { margin-bottom: 0; }
     .post .date { color: #bbb; margin-top: -5px; }
+    @media (prefers-color-scheme: dark) { .post .date  { color:  #555; } }
     .post .entry { color: #555; margin-top: 20px; }
+    @media (prefers-color-scheme: dark) { .post  .entry { color: #eee; } }
     .post .entry p { margin-top: 20px; margin-bottom: 20px; }
     .post .entry h2,
     .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
     .post .entry h2 { color: #111; }
+    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     </style>
 
     <script src="https://soynomm.com/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media (prefers-color-scheme: dark) { .hljs { color: #eee; background: #171717; border: 1px solid #373737; } }
     @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
     .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
     .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
