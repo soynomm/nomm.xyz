@@ -32,11 +32,11 @@ As you can see, the class will hold in its state the raw form of args we receive
 ```java
 public class ArgParser {
 
-    private final String[] args;
+	private final String[] args;
 
-    public ArgParser(String[] args) {
-        this.args = args;
-    }
+	public ArgParser(String[] args) {
+		this.args = args;
+	}
 
 }
 ```
@@ -57,7 +57,7 @@ Next up I created a simple `has` method that checks if a given argument actually
 
 ```java
 private boolean has(String arg) {
-    return Arrays.asList(this.args).contains(arg);
+	return Arrays.asList(this.args).contains(arg);
 }
 ```
 
@@ -65,17 +65,17 @@ You see I can call the `has` method like `this.has("argumentName")` and it will 
 
 ```java
 public String get(String arg, String defaultValue) {
-    if (this.has(arg)) {
-        int index = Arrays.asList(args).indexOf(arg);
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
 
-        try {
-            return this.args[index + 1];
-        } catch(java.lang.ArrayIndexOutOfBoundsException e) {
-            return defaultValue;
-        }
-    }
+		try {
+			return this.args[index + 1];
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 ```
 
@@ -85,21 +85,21 @@ If the argument exists, it will try to find its value and return it. However if 
 
 ```java
 public String get(String arg, String defaultValue) {
-    if (this.has(arg)) {
-        int index = Arrays.asList(args).indexOf(arg);
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
 
-        try {
-            String value = this.args[index + 1];
+		try {
+			String value = this.args[index + 1];
 
-            if (value.charAt(0) != '-') {
-                return value;
-            }
-        } catch(java.lang.ArrayIndexOutOfBoundsException e) {
-            return defaultValue;
-        }
-    }
+			if (value.charAt(0) != '-') {
+				return value;
+			}
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 ```
 
@@ -119,15 +119,15 @@ But what if I also want to have an alternative argument, say `--arg` and `-a` fo
 
 ```java
 public String get(String arg, String alternativeArg, String defaultValue) {
-    if (!this.get(arg, "").equals("")) {
-        return this.get(arg, "");
-    }
+	if (!this.get(arg, "").equals("")) {
+		return this.get(arg, "");
+	}
 
-    if (!this.get(alternativeArg, "").equals("")) {
-        return this.get(alternativeArg, "");
-    }
+	if (!this.get(alternativeArg, "").equals("")) {
+		return this.get(alternativeArg, "");
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 ```
 
@@ -148,11 +148,11 @@ But wait, there's an important piece missing here! What if I want a boolean resu
 
 ```java
 public boolean get(String arg, String alternativeArg, boolean defaultValue) {
-    if (this.has(arg) || this.has(alternativeArg)) {
-        return true;
-    }
+	if (this.has(arg) || this.has(alternativeArg)) {
+		return true;
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 ```
 

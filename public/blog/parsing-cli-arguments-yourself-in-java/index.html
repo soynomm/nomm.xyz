@@ -143,11 +143,11 @@
 <p>As you can see, the class will hold in its state the raw form of args we receive in our <code>Main.main</code>. Now we need a constructor to put the args in the state when initializing <code>ArgParser</code>, so let's add it like this:</p>
 <pre><code class="language-java">public class ArgParser {
 
-    private final String[] args;
+	private final String[] args;
 
-    public ArgParser(String[] args) {
-        this.args = args;
-    }
+	public ArgParser(String[] args) {
+		this.args = args;
+	}
 
 }
 </code></pre>
@@ -161,42 +161,42 @@
 <p>It doesn't do anything yet, but it will shortly.</p>
 <p>Next up I created a simple <code>has</code> method that checks if a given argument actually exists in <code>this.args</code> or not:</p>
 <pre><code class="language-java">private boolean has(String arg) {
-    return Arrays.asList(this.args).contains(arg);
+	return Arrays.asList(this.args).contains(arg);
 }
 </code></pre>
 <p>You see I can call the <code>has</code> method like <code>this.has(&quot;argumentName&quot;)</code> and it will return <code>true</code> if the argument exists in <code>this.args</code>. Naturally it will return false otherwise. Now all there's left to do is to create a getter, but I don't want the getter to only return the arguments value - I also want it to return a default value that I provide if the argument either doesn't exist or doesn't have value. I made it happen like this:</p>
 <pre><code class="language-java">public String get(String arg, String defaultValue) {
-    if (this.has(arg)) {
-        int index = Arrays.asList(args).indexOf(arg);
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
 
-        try {
-            return this.args[index + 1];
-        } catch(java.lang.ArrayIndexOutOfBoundsException e) {
-            return defaultValue;
-        }
-    }
+		try {
+			return this.args[index + 1];
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 </code></pre>
 <p>If the argument exists, it will try to find its value and return it. However if it doesn't have a value, we'll be hitting an <code>ArrayIndexOutOfBoundsException</code>, and in that case we return the default value. If the argument does not exist, we also return the default value.</p>
 <p><strong>There's a slight bug in this code though</strong>. It's that if the provided arguments are like <code>appName --arg1 --arg2</code>, then by using our getter for <code>--arg1</code>, its value would be incorrectly <code>--arg2</code> and not the default value. I can fix this by checking that if it does find a value, it wouldn't start with a hyphen, like so:</p>
 <pre><code class="language-java">public String get(String arg, String defaultValue) {
-    if (this.has(arg)) {
-        int index = Arrays.asList(args).indexOf(arg);
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
 
-        try {
-            String value = this.args[index + 1];
+		try {
+			String value = this.args[index + 1];
 
-            if (value.charAt(0) != '-') {
-                return value;
-            }
-        } catch(java.lang.ArrayIndexOutOfBoundsException e) {
-            return defaultValue;
-        }
-    }
+			if (value.charAt(0) != '-') {
+				return value;
+			}
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 </code></pre>
 <p>So I can utilise this to make actual use of the freshly baked <code>ArgParser</code>:</p>
@@ -209,15 +209,15 @@
 </code></pre>
 <p>But what if I also want to have an alternative argument, say <code>--arg</code> and <code>-a</code> for short, as is popular to do? Overloading comes to rescue here as I can create another <code>get</code> method that takes an additional String parameter:</p>
 <pre><code class="language-java">public String get(String arg, String alternativeArg, String defaultValue) {
-    if (!this.get(arg, &quot;&quot;).equals(&quot;&quot;)) {
-        return this.get(arg, &quot;&quot;);
-    }
+	if (!this.get(arg, &quot;&quot;).equals(&quot;&quot;)) {
+		return this.get(arg, &quot;&quot;);
+	}
 
-    if (!this.get(alternativeArg, &quot;&quot;).equals(&quot;&quot;)) {
-        return this.get(alternativeArg, &quot;&quot;);
-    }
+	if (!this.get(alternativeArg, &quot;&quot;).equals(&quot;&quot;)) {
+		return this.get(alternativeArg, &quot;&quot;);
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 </code></pre>
 <p>So now I can utilise the <code>get</code> method like this:</p>
@@ -231,11 +231,11 @@
 <p>And it would return a value for either of those arguments or the default value if none found.</p>
 <p>But wait, there's an important piece missing here! What if I want a boolean result for if an argument exists or not? Say if I want to the argument to <em>not have</em> a value, and instead just want to know if it's present? Overloading comes to rescue once more! I'll create another <code>get</code> method that returns a boolean and takes a boolean as its default value:</p>
 <pre><code class="language-java">public boolean get(String arg, String alternativeArg, boolean defaultValue) {
-    if (this.has(arg) || this.has(alternativeArg)) {
-        return true;
-    }
+	if (this.has(arg) || this.has(alternativeArg)) {
+		return true;
+	}
 
-    return defaultValue;
+	return defaultValue;
 }
 </code></pre>
 <p>Now you could simply use:</p>
