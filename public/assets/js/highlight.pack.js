@@ -709,7 +709,7 @@ className:"symbol",begin:/\[/,end:/\]/,excludeBegin:!0,excludeEnd:!0},{
 className:"link",begin:/:\s*/,end:/$/,excludeBegin:!0}]}]}}})());
 
 hljs.configure({
-	tabReplace: '  ';
+	tabReplace: '  '
 });
 
 hljs.highlightAll();
