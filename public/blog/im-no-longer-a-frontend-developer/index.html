@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>I&#39;m no longer a front-end developer &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root { --color: #DF0505; }
+    @media (prefers-color-scheme: dark) { :root { --color: #fb4f4f; } }
+
+    * {
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (prefers-color-scheme: dark) { html { background:  #111; } }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    @media (prefers-color-scheme: dark) { h1 { color:  #fff; } }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    @media (prefers-color-scheme: dark) { h2 { color: #555; } }
+    h2 a { font-weight: 500; }
+    a { color: var(--color); }
+    em { color: #777; }
+    @media (prefers-color-scheme: dark) { em { color:  #777; } }
+    strong { color: #111; font-weight: 600; }
+    @media (prefers-color-scheme: dark) { strong  { color:  #fff; } }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    @media (prefers-color-scheme: dark) { code { color: #bbb; border-bottom: 1px dashed #555; } }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    strike { opacity: .5; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media (prefers-color-scheme: dark) { body { color:  #e5e5e5; } }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    @media (prefers-color-scheme: dark) { .social-icon { filter: invert(1); } }
+    .social-icon:hover { opacity: .75; transition: all 0.25s; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 100px); }
+    .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { .posts li .date  { color: #555; } }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    @media (prefers-color-scheme: dark) { .back a { color:  #555; } }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; margin-top: -5px; }
+    @media (prefers-color-scheme: dark) { .post .date  { color:  #555; } }
+    .post .entry { color: #555; margin-top: 20px; }
+    @media (prefers-color-scheme: dark) { .post  .entry { color: #e5e5e5; } }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    </style>
+
+    <script src="https://nomm.xyz/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }  
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    @media (prefers-color-scheme: dark) { .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #80a5f6; } }
+
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+
+
+
+                <div class="back">
+                    <a href="https://nomm.xyz/blog/">&laquo; back</a>
+                </div>
+
+            <div class="post">
+                <h1>I&#39;m no longer a front-end developer</h1>
+                <div class="date">Mar 03, 2021</div>
+                <div class="entry"><p><a href="https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/">True to my word</a>, as of today I'm no longer a front-end developer. Yesterday
+marked the last day as one, and also the last day at <a href="https://www.greenpowermonitor.com/">GPM</a>,
+where I had spent my last 2 and a half years. The first two years I spent almost entirely
+writing ClojureScript, which I must say is a joy to write, and the rest writing TypeScript,
+which to me is like my colleagues know, a poor man's typed language.</p>
+<p><strong>Funny story about GPM:</strong> I was new in Barcelona and needed a job, so I applied to a
+few JavaScript positions, one of which was GPM. I had just one call with them
+after which I received a formal offer. Once arriving in the offices to sign my
+contract I found out that I will be doing ClojureScript instead, which if you don't know
+is about as different from JavaScript as a thing could be. I also found out that
+they had forgotten to send me a test job and that it was a bit late for that.
+Seems all worked out despite these things, and if Clojure were a bit more popular, I'd probably
+be looking to do back-end Clojure now.</p>
+<p>I have no bad words about the company or the people I've worked with. I was told that
+if I ever find myself in Barcelona again and would like to work for them again,
+the door is always open - and while it would certainly have to be back-end for me then -
+I really wouldn't mind. I've met amazing people there and will not miss a chance to
+invite them for a drink whenever I find myself in Spain again.</p>
+<p>So what's next for me? Well, if you read my post <a href="https://soynomm.com/blog/creating-a-static-site-generator-in-python/">on creating a static site generator in Python</a>,
+you'd probably guess it was Python. I've done enough of
+job market, developer happiness, and would-i-like-it research to be able to guess
+with a pretty high probability that I'd be happy writing Python. But once I looked a bit closer into what <em>types</em> of jobs Python would mostly offer, I found it's either automation or data science. Automation is usually low-pay and data science isn't something I'm interested in, and so Python, for now at least, isn't going to work for me. I'll have to find something else.</p>
+<p>I'm sure that the transition to back-end won't be an easy one as there are a lot of tools
+and technologies I need to catch up with, as well as brush up on my algo's and data
+structures. Believe it or not in my 10 years as an engineer, never really needed
+too much of that. That said, I'm determined to become a back-end expert, and par for the course,
+expert in data structures and algo's as well. After all, I've heard that it's
+impossible to land a back-end job without knowing how to revert different types of trees.
+Obviously, you'll need a shovel and possibly a crane of sorts.</p>
+<p>I know some of you might cringe reading this and think I must not be so bright,
+and perhaps you are right, but I managed to learn all of this on my own with no
+mentors and no formal education, just a bunch of googling and of building a ton of
+side projects, and I've done well for myself thus far, and
+that's the only measure of success that matters to me. The way I see the world,
+it's the only measure of success that should matter to anyone.</p>
+<p>Here's to the next 10 years of software development, this time as a back-end developer.</p>
+</div>
+            </div>
+
+
+
+</body>
+</html>

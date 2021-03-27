@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Parsing CLI arguments yourself in Java &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root { --color: #DF0505; }
+    @media (prefers-color-scheme: dark) { :root { --color: #fb4f4f; } }
+
+    * {
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (prefers-color-scheme: dark) { html { background:  #111; } }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    @media (prefers-color-scheme: dark) { h1 { color:  #fff; } }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    @media (prefers-color-scheme: dark) { h2 { color: #555; } }
+    h2 a { font-weight: 500; }
+    a { color: var(--color); }
+    em { color: #777; }
+    @media (prefers-color-scheme: dark) { em { color:  #777; } }
+    strong { color: #111; font-weight: 600; }
+    @media (prefers-color-scheme: dark) { strong  { color:  #fff; } }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    @media (prefers-color-scheme: dark) { code { color: #bbb; border-bottom: 1px dashed #555; } }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    strike { opacity: .5; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media (prefers-color-scheme: dark) { body { color:  #e5e5e5; } }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    @media (prefers-color-scheme: dark) { .social-icon { filter: invert(1); } }
+    .social-icon:hover { opacity: .75; transition: all 0.25s; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 100px); }
+    .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { .posts li .date  { color: #555; } }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    @media (prefers-color-scheme: dark) { .back a { color:  #555; } }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; margin-top: -5px; }
+    @media (prefers-color-scheme: dark) { .post .date  { color:  #555; } }
+    .post .entry { color: #555; margin-top: 20px; }
+    @media (prefers-color-scheme: dark) { .post  .entry { color: #e5e5e5; } }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    </style>
+
+    <script src="https://nomm.xyz/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }  
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    @media (prefers-color-scheme: dark) { .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #80a5f6; } }
+
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+
+
+
+                <div class="back">
+                    <a href="https://nomm.xyz/blog/">&laquo; back</a>
+                </div>
+
+            <div class="post">
+                <h1>Parsing CLI arguments yourself in Java</h1>
+                <div class="date">Mar 23, 2021</div>
+                <div class="entry"><p>If you're like me and making a Java app that's meant to be used on the command line, there's a fair chance you'll also be using CLI arguments for that app. There's a few tools out there that help you with this like <a href="https://picocli.info">picocli</a>, but I figured the problem is such an insignificant one for me and my use-case that I won't need a full-featured thing like that for this. After all, I have all of the information that I could need in a provided array of strings already like this inside my Main class:</p>
+<pre><code class="language-java">public class Main {
+	public static void main(String[] args) {
+		// we have the arguments in args
+	}
+}
+</code></pre>
+<p>Following the logic that I have a flag and that flag has an optional value, like <code>appName --flag {value}</code>. I'd have the command at index 0, its value (if it has any) on index 1. Following command on index 2 and its value on index 3, and so on. It's pretty straight-forward, and so is my solution to this. Let's get to it.</p>
+<p>To start with, I created a class called <code>ArgParser</code>, like so:</p>
+<pre><code class="language-java">public class ArgParser {
+
+	private final String[] args;
+
+}
+</code></pre>
+<p>As you can see, the class will hold in its state the raw form of args we receive in our <code>Main.main</code>. Now we need a constructor to put the args in the state when initializing <code>ArgParser</code>, so let's add it like this:</p>
+<pre><code class="language-java">public class ArgParser {
+
+	private final String[] args;
+
+	public ArgParser(String[] args) {
+		this.args = args;
+	}
+
+}
+</code></pre>
+<p>Which we can then initialize like this:</p>
+<pre><code class="language-java">public class Main {
+	public static void main(String[] args) {
+		ArgParser argParser = new ArgParser(args);
+	}
+}
+</code></pre>
+<p>It doesn't do anything yet, but it will shortly.</p>
+<p>Next up I created a simple <code>has</code> method that checks if a given argument actually exists in <code>this.args</code> or not:</p>
+<pre><code class="language-java">private boolean has(String arg) {
+	return Arrays.asList(this.args).contains(arg);
+}
+</code></pre>
+<p>You see I can call the <code>has</code> method like <code>this.has(&quot;argumentName&quot;)</code> and it will return <code>true</code> if the argument exists in <code>this.args</code>. Naturally it will return false otherwise. Now all there's left to do is to create a getter, but I don't want the getter to only return the arguments value - I also want it to return a default value that I provide if the argument either doesn't exist or doesn't have value. I made it happen like this:</p>
+<pre><code class="language-java">public String get(String arg, String defaultValue) {
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
+
+		try {
+			return this.args[index + 1];
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
+
+	return defaultValue;
+}
+</code></pre>
+<p>If the argument exists, it will try to find its value and return it. However if it doesn't have a value, we'll be hitting an <code>ArrayIndexOutOfBoundsException</code>, and in that case we return the default value. If the argument does not exist, we also return the default value.</p>
+<p><strong>There's a slight bug in this code though</strong>. It's that if the provided arguments are like <code>appName --arg1 --arg2</code>, then by using our getter for <code>--arg1</code>, its value would be incorrectly <code>--arg2</code> and not the default value. I can fix this by checking that if it does find a value, it wouldn't start with a hyphen, like so:</p>
+<pre><code class="language-java">public String get(String arg, String defaultValue) {
+	if (this.has(arg)) {
+		int index = Arrays.asList(args).indexOf(arg);
+
+		try {
+			String value = this.args[index + 1];
+
+			if (value.charAt(0) != '-') {
+				return value;
+			}
+		} catch(java.lang.ArrayIndexOutOfBoundsException e) {
+			return defaultValue;
+		}
+	}
+
+	return defaultValue;
+}
+</code></pre>
+<p>So I can utilise this to make actual use of the freshly baked <code>ArgParser</code>:</p>
+<pre><code class="language-java">public class Main {
+	public static void main(String[] args) {
+		ArgParser argParser = new ArgParser(args);
+		String argValue = argParser.get(&quot;--arg&quot;, &quot;defaultValue&quot;);
+	}
+}
+</code></pre>
+<p>But what if I also want to have an alternative argument, say <code>--arg</code> and <code>-a</code> for short, as is popular to do? Overloading comes to rescue here as I can create another <code>get</code> method that takes an additional String parameter:</p>
+<pre><code class="language-java">public String get(String arg, String alternativeArg, String defaultValue) {
+	if (!this.get(arg, &quot;&quot;).equals(&quot;&quot;)) {
+		return this.get(arg, &quot;&quot;);
+	}
+
+	if (!this.get(alternativeArg, &quot;&quot;).equals(&quot;&quot;)) {
+		return this.get(alternativeArg, &quot;&quot;);
+	}
+
+	return defaultValue;
+}
+</code></pre>
+<p>So now I can utilise the <code>get</code> method like this:</p>
+<pre><code class="language-java">public class Main {
+	public static void main(String[] args) {
+		ArgParser argParser = new ArgParser(args);
+		String argValue = argParser.get(&quot;--arg&quot;, &quot;-a&quot;, &quot;defaultValue&quot;);
+	}
+}
+</code></pre>
+<p>And it would return a value for either of those arguments or the default value if none found.</p>
+<p>But wait, there's an important piece missing here! What if I want a boolean result for if an argument exists or not? Say if I want to the argument to <em>not have</em> a value, and instead just want to know if it's present? Overloading comes to rescue once more! I'll create another <code>get</code> method that returns a boolean and takes a boolean as its default value:</p>
+<pre><code class="language-java">public boolean get(String arg, String alternativeArg, boolean defaultValue) {
+	if (this.has(arg) || this.has(alternativeArg)) {
+		return true;
+	}
+
+	return defaultValue;
+}
+</code></pre>
+<p>Now you could simply use:</p>
+<pre><code class="language-java">public class Main {
+	public static void main(String[] args) {
+		ArgParser argParser = new ArgParser(args);
+		boolean argValue = argParser.get(&quot;--arg&quot;, &quot;-a&quot;, false);
+	}
+}
+</code></pre>
+<p>And <code>argValue</code> will be <code>true</code> if either of the arguments are present and <code>false</code> otherwise. Pretty straight-forward, right?</p>
+</div>
+            </div>
+
+
+
+</body>
+</html>
