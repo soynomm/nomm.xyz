@@ -5,7 +5,7 @@ public: true
 date: 2021-03-23
 ---
 
-If you're like me and making a Java app that's meant to be used on the command line, there's a fair chance you'll also be using CLI arguments for that app. There's a few tools out there that help you with this like [picocli](https://picocli.info), but I figured the problem is such an insignificant one for me and my use-case that I won't need a full-featured thing like that for this. After all, I have all of the information that I could need in a provided array of strings already like this inside my Main class:
+If you're like me and making a Java app that's meant to be used on the command line, there's a fair chance you'll also be using CLI arguments for that app. There's tools out there that help you with this like [picocli](https://picocli.info), but I figured the problem is such an insignificant one for me and my use-case that I won't need a full-featured thing like that for this. After all, I have all of the information that I could need in a provided array of strings already like this inside my Main class:
 
 ```java
 public class Main {
