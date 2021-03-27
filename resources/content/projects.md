@@ -24,4 +24,4 @@ A WordPress performance plugin I made pretty much out of frustration that any
 existing plugin was full of bloat, ads or who-knows-what. It has a total of 12
 modules to speed up your WordPress powered site, entirely free, no strings attached.
 
-**Status:** feature-complete, in maintenance mode. Think you could make something more of it? [Get in touch](mailto:nomm@hey.com) and I might just gift it to you, since I'm no longer interested in PHP nor WordPress.
+**Status:** feature-complete, in maintenance mode. Think you could make something more of it? [Get in touch](mailto:nomm@nomm.xyz) and I might just gift it to you, since I'm no longer interested in PHP nor WordPress.
