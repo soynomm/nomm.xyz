@@ -63,6 +63,8 @@
     @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
 
     /** HOME */
+    .logo { width: 32px; height: 32px; margin-left: -3px; margin-bottom: 10px; }
+    @media (prefers-color-scheme: dark) { .logo { filter: invert(1); } }
     .description { margin-top: 20px; }
     .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
     @media (prefers-color-scheme: dark) { .social-icon { filter: invert(1); } }
@@ -120,6 +122,8 @@
 <body{{#is_home}} class="home"{{/is_home}}>
 
     {{#is_home}}
+    <img src="./assets/images/logo.svg" class="logo">
+
     <h1>I'm Nomm</h1>
 
     <p class="description">
