@@ -13,7 +13,7 @@ maintained.
 ## [Bloggo](https://github.com/soynomm/bloggo)
 
 A blog-oriented static site generator used for this very site, written in 
-Python. I wrote this to learn Python and to, naturally, have a tailor-made blog 
+Java. I wrote this to learn Java and to, naturally, have a tailor-made blog 
 machine that tickles my fancy.
 
 **Status:** in active development.
