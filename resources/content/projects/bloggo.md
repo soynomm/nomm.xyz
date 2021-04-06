@@ -24,6 +24,7 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 
 ## Installation
 
+<a name="linux"></a>
 ### Linux
 
 1. Download the `bloggo-linux` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
@@ -31,6 +32,7 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 3. Make it executable via `chmod +x bloggo`
 4. Run it with `./bloggo` (or move it to `/usr/local/bin` to access globally as `bloggo`)
 
+<a name="macos"></a>
 ### macOS
 
 1. Download the `bloggo-mac` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
@@ -38,25 +40,30 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 3. Make it executable via `chmod +x bloggo`
 4. Run it with `./bloggo` (or move it to `/usr/local/bin` to access globally as `bloggo`)
 
+<a name="windows"></a>
 ### Windows
 
 1. Download the `bloggo.exe` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
 3. Run it with `.\bloggo.exe` (or add it to PATH to access globally as `bloggo`)
 
+<a name="java"></a>
 ### Java
 
 To run it on any platform that has Java, you'll need Java 11+, download the `bloggo.jar` file and run it with `java -jar bloggo.jar`.
 
+<a name="updating"></a>
 ## Updating
 
 To update any previous version you might have, simply overwrite/replace your existing Bloggo executable with a new one.
 
+<a name="usage"></a>
 ## Usage
 
 Using Bloggo is straight-forward in that you just need to have a resources' directory that contains everything your static
 website needs, like a `config.json` file for configuration, a `layout.mustache` file for the website template as well as a `content` 
 directory inside the resources' directory for all the content files that make up your website.
 
+<a name="directory-structure"></a>
 ### Directory structure
 
 By default, Bloggo is looking for a resources' directory called `resources` (you can specify any other directory by calling `bloggo -r {directory}` or `bloggo --resources {directory}`).
@@ -70,6 +77,7 @@ The resources' directory structure needs to look like this:
   - config.json
   - layout.mustache
   
+<a name="site-layout"></a>
 ### Site layout
 
 The site layout of your static website lives inside a [Mustache](https://mustache.github.io/mustache.5.html) template file `layout.mustache` in the root of the resources' directory.
@@ -78,12 +86,14 @@ like all Mustache content files, it also can have any structure you want it to h
 
 You can check out [my own website' layout.mustache](https://github.com/soynomm/nomm.xyz/layout.mustache) for an example use-case.
 
+<a name="content-files"></a>
 ### Content files
 
 All the content files reside inside the `content` directory. There are two types of content files - Markdown ({filename}.md) and Mustache ({filename}.mustache).
 Markdown content files are meant for static content, such as blog posts and pages. Mustache
 content files are meant for custom, dynamic pages.
 
+<a name="markdown"></a>
 #### Markdown
 
 A Markdown content file looks like this:
@@ -113,6 +123,7 @@ available via the following Mustache variables:
 The filename determines the eventual path of the content item. For example a file with a name of `hello-world.md` will be 
 compiled into `/hello-world/index.html`, and thus be accessible via the URL https://example.com/hello-world/.
 
+<a name="mustache"></a>
 #### Mustache
 
 A Mustache content file can have any structure you want. You can check out [my own website content files](https://github.com/soynomm/nomm.xyz) for example use-cases. 
@@ -125,6 +136,7 @@ But unlike a Markdown content file, a Mustache content file will not be compiled
 compiled into whatever format you want. For example a file with a name of `feed.xml.mustache` will be compiled into `feed.xml`, 
 thus allowing you to determine the file format.
 
+<a name="template-data"></a>
 ### Template data
 
 In all of your Mustache files (including content files and site layout), the following data is available for use:
@@ -135,7 +147,7 @@ Returns true if the user visits the home page of the site.
 
 Example usage:
 
-```mustache
+```
 {{#is_home}}
 <p>Hi! Welcome to my website.</p>
 {{/is_home}}
@@ -150,7 +162,7 @@ Returns true if the user visits any of the content files.
 
 Example usage:
 
-```mustache
+```
 {{#is_post}}
   <h2>{{title}}></h2>
   <div class="date">{{pretty_date}}</div>
@@ -164,7 +176,7 @@ Returns a collection of content items inside the `content/blog` directory that y
 
 Example usage:
 
-```mustache
+```
 <ul class="posts">
 {{#posts}} 
     <li class="year">{{year}}</li>
@@ -182,6 +194,7 @@ Example usage:
 
 Returns the date of the last created content item inside the `content/blog` directory in `EEE, dd MMM yyyy HH:mm:ss Z` format.
 
+<a name="site-configuration"></a>
 ### Site configuration
 
 Site configuration lives inside the `config.json` file in the root of the resources' directory. It can contain anything you'd 
@@ -194,10 +207,12 @@ like to have there, but these three things are required:
 All the items inside the `config.json` file are also available globally in all of your Mustache template files, 
 including `layout.mustache` as well as any content file with the `.mustache` file extension.
 
+<a name="command-line-usage"></a>
 ### Command-line usage
 
 To see the full CLI usage of Bloggo, run Bloggo with `bloggo -h` or `bloggo --help`. 
 
+<a name="example-sites"></a>
 ## Example sites
 
 - [Nomm](https://nomm.xyz) ([Github repository](https://github.com/soynomm/nomm.xyz))
