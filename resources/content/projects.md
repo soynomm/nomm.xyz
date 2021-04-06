@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: A variety of software projects that I'm more-or-less actively working on.
+description: A variety of software projects that I'm working on.
 is_projects: true
 ---
 
@@ -17,6 +17,12 @@ Java. I wrote this to learn Java and to, naturally, have a tailor-made blog
 machine that tickles my fancy.
 
 **Status:** in active development.
+
+## [Penned](https://github.com/soynomm/penned)
+
+A note-keeping service for minimalists who prefer plain-text over WYSIWYG. I'm building this currently in part to get more comfortable with [Spring](https://spring.io) and because I simply don't like any note-keeping service out there for one or another reason.
+
+**Status:* In active development.
 
 ## [Splendid Speed](https://wordpress.org/plugins/splendid-speed/)
 
