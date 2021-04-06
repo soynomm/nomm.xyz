@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Bloggo &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root { --color: #DF0505; }
+    @media (prefers-color-scheme: dark) { :root { --color: #fb4f4f; } }
+
+    * {
+        font-family: 'Fira Code', Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.85;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (prefers-color-scheme: dark) { html { background:  #111; } }
+
+    @media all and (max-width: 600px) { html { display: block; }}
+
+    body.home {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h1, h2 { text-transform: uppercase; }
+    h1 { display: block; margin-bottom: 20px; font-weight: 700; color: #111; }
+    @media (prefers-color-scheme: dark) { h1 { color:  #fff; } }
+    h2 { color: #999; margin-top: 100px; margin-bottom: 20px; font-weight: 500; }
+    @media (prefers-color-scheme: dark) { h2 { color: #555; } }
+    h2 a { font-weight: 500; }
+    a { color: var(--color); }
+    em { color: #777; }
+    @media (prefers-color-scheme: dark) { em { color:  #999; } }
+    strong { color: #111; font-weight: 600; }
+    @media (prefers-color-scheme: dark) { strong  { color:  #fff; } }
+    code { color: #777; border-bottom: 1px dashed #e5e5e5; }
+    @media (prefers-color-scheme: dark) { code { color: #bbb; border-bottom: 1px dashed #555; } }
+    pre code { color: #333; border-bottom:  0; overflow: auto; }
+    strike { opacity: .5; }
+    body { width: 550px; color: #333; margin: 50px auto; }
+    @media (prefers-color-scheme: dark) { body { color:  #e5e5e5; } }
+    @media all and (max-width: 600px) { body { width: 100%; padding: 20px; margin: 0; } }
+
+    /** HOME */
+    .description { margin-top: 20px; }
+    .social-icon { display: inline-block; width: 15px; height: auto; opacity: .5; margin-right: 5px; }
+    @media (prefers-color-scheme: dark) { .social-icon { filter: invert(1); } }
+    .social-icon:hover { opacity: .75; transition: all 0.25s; }
+    .posts { list-style: none; margin-top: 20px; }
+    .posts li.year { text-align: right; font-weight: 500; margin-top: 40px; }
+    .posts li.year:first-child { margin-top: -25px; }
+    .posts li { display: flow-root; margin-bottom: 5px; }
+    @media all and (max-width: 600px) { .posts li { margin-bottom: 15px; } }
+    .posts li:last-child { margin-bottom: 0; }
+    .posts li h3 { float: left; width: calc(100% - 100px); }
+    .posts li .date { float: right; width: 100px; color: #bbb; text-align: right; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { .posts li .date  { color: #555; } }
+
+    /** POST */
+    .back { margin-bottom: 40px; }
+    @media all and (min-width: 750px) { .back { position: absolute; margin-left: -80px; }}
+    .back a { font-weight: 300; color: #bbb; text-decoration: none; }
+    @media (prefers-color-scheme: dark) { .back a { color:  #555; } }
+    .post h1 { margin-bottom: 0; }
+    .post .date { color: #bbb; margin-top: -5px; }
+    @media (prefers-color-scheme: dark) { .post .date  { color:  #555; } }
+    .post .entry { color: #555; margin-top: 20px; }
+    @media (prefers-color-scheme: dark) { .post  .entry { color: #e5e5e5; } }
+    .post .entry p { margin-top: 20px; margin-bottom: 20px; }
+    .post .entry h2,
+    .post .entry h3 { margin-top: 60px; margin-bottom: 0; }
+    .post .entry h2 { color: #111; }
+    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
+    .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
+    .post .entry ul {
+        margin-left: 18px;
+    }
+    </style>
+
+    <script src="https://nomm.xyz/assets/js/highlight.pack.js"></script>
+    <style>
+    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
+    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
+    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
+    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
+    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
+    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
+    .hljs-literal { color: #0184bb; }
+    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }  
+    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
+    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
+    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
+    @media (prefers-color-scheme: dark) { .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #80a5f6; } }
+
+    .hljs-emphasis { font-style: italic; }
+    .hljs-strong { font-weight: bold; }
+    .hljs-link { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+
+
+
+                <div class="back">
+                    <a href="https://nomm.xyz/">&laquo; back</a>
+                </div>
+
+            <div class="post">
+                <h1>Bloggo</h1>
+                
+                <div class="entry"><p>A blog-oriented static site generator that supports static content in the form of Markdown files as well as
+dynamic content in the form of Mustache templates, allowing you to create flexible websites.</p>
+<ul>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a href="#updating">Updating</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#directory-structure">Directory structure</a></li>
+<li><a href="#content-files">Content files</a>
+<ul>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#mustache">Mustache</a></li>
+</ul>
+</li>
+<li><a href="#site-layout">Site layout</a></li>
+<li><a href="#template-data">Template data</a></li>
+<li><a href="#site-configuration">Site configuration</a></li>
+<li><a href="#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li><a href="#example-sites">Example sites</a></li>
+</ul>
+<h2>Installation</h2>
+<h3>Linux</h3>
+<ol>
+<li>Download the <code>bloggo-linux</code> executable from the <a href="https://github.com/soynomm/bloggo/releases">latest release</a></li>
+<li>Rename it to something more friendly like <code>bloggo</code> with <code>mv bloggo-linux bloggo</code></li>
+<li>Make it executable via <code>chmod +x bloggo</code></li>
+<li>Run it with <code>./bloggo</code> (or move it to <code>/usr/local/bin</code> to access globally as <code>bloggo</code>)</li>
+</ol>
+<h3>macOS</h3>
+<ol>
+<li>Download the <code>bloggo-mac</code> executable from the <a href="https://github.com/soynomm/bloggo/releases">latest release</a></li>
+<li>Rename it to something more friendly like <code>bloggo</code> with <code>mv bloggo-mac bloggo</code></li>
+<li>Make it executable via <code>chmod +x bloggo</code></li>
+<li>Run it with <code>./bloggo</code> (or move it to <code>/usr/local/bin</code> to access globally as <code>bloggo</code>)</li>
+</ol>
+<h3>Windows</h3>
+<ol>
+<li>Download the <code>bloggo.exe</code> executable from the <a href="https://github.com/soynomm/bloggo/releases">latest release</a></li>
+<li>Run it with <code>.\bloggo.exe</code> (or add it to PATH to access globally as <code>bloggo</code>)</li>
+</ol>
+<h3>Java</h3>
+<p>To run it on any platform that has Java, you'll need Java 11+, download the <code>bloggo.jar</code> file and run it with <code>java -jar bloggo.jar</code>.</p>
+<h2>Updating</h2>
+<p>To update any previous version you might have, simply overwrite/replace your existing Bloggo executable with a new one.</p>
+<h2>Usage</h2>
+<p>Using Bloggo is straight-forward in that you just need to have a resources' directory that contains everything your static
+website needs, like a <code>config.json</code> file for configuration, a <code>layout.mustache</code> file for the website template as well as a <code>content</code>
+directory inside the resources' directory for all the content files that make up your website.</p>
+<h3>Directory structure</h3>
+<p>By default, Bloggo is looking for a resources' directory called <code>resources</code> (you can specify any other directory by calling <code>bloggo -r {directory}</code> or <code>bloggo --resources {directory}</code>).
+The resources' directory structure needs to look like this:</p>
+<ul>
+<li>resources/
+<ul>
+<li>content/
+<ul>
+<li>hello-world.md</li>
+<li>author/
+<ul>
+<li>john.md</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>config.json</li>
+<li>layout.mustache</li>
+</ul>
+</li>
+</ul>
+<h3>Site layout</h3>
+<p>The site layout of your static website lives inside a <a href="https://mustache.github.io/mustache.5.html">Mustache</a> template file <code>layout.mustache</code> in the root of the resources' directory.
+That layout file has all the <a href="#template-data">template data</a> available to it just like all Mustache content files do, and just
+like all Mustache content files, it also can have any structure you want it to have.</p>
+<p>You can check out <a href="https://github.com/soynomm/nomm.xyz/layout.mustache">my own website' layout.mustache</a> for an example use-case.</p>
+<h3>Content files</h3>
+<p>All the content files reside inside the <code>content</code> directory. There are two types of content files - Markdown ({filename}.md) and Mustache ({filename}.mustache).
+Markdown content files are meant for static content, such as blog posts and pages. Mustache
+content files are meant for custom, dynamic pages.</p>
+<h4>Markdown</h4>
+<p>A Markdown content file looks like this:</p>
+<pre><code class="language-markdown">---
+title: Hello, World
+date: 2020-12-01
+---
+
+Hi there, world.
+</code></pre>
+<p>Meta-data of each Markdown content file goes in-between 3 hyphens, and the entry of the content file itself will go below the meta-data.
+Markdown content file data is available to you via <code>{{metakey}}</code> Mustache templating, for example the above content file would be
+available via the following Mustache variables:</p>
+<ul>
+<li><code>{{title}}</code> - renders the meta-data title value</li>
+<li><code>{{date}}</code> - renders the default date in the format of <code>EEE, dd MMM yyyy HH:mm:ss Z</code></li>
+<li><code>{{date_unparsed}}</code> - renders the date as it is in the content file</li>
+<li><code>{{pretty_date}}</code> - renders the date in the format of <code>MMM dd, yyyy</code></li>
+<li><code>{{pretty_date_without_year}}</code> - renders the date in the format of <code>MMM dd</code></li>
+<li><code>{{{entry}}}</code> - renders the entry-block Markdown into HTML. Yes, needs 3 brackets.</li>
+<li><code>{{url}}</code> - renders the fully-qualified URL of the content item (https://example.com/hello-world/)</li>
+<li><code>{{path}}</code> - renders the content item's path (/hello-world/)</li>
+</ul>
+<p>The filename determines the eventual path of the content item. For example a file with a name of <code>hello-world.md</code> will be
+compiled into <code>/hello-world/index.html</code>, and thus be accessible via the URL https://example.com/hello-world/.</p>
+<h4>Mustache</h4>
+<p>A Mustache content file can have any structure you want. You can check out <a href="https://github.com/soynomm/nomm.xyz">my own website content files</a> for example use-cases.</p>
+<p>It's important to note that unlike a Markdown content file, a Mustache content file does not use site layout
+and thus enables (and encourages) an entirely new layout for each Mustache content file.</p>
+<p>Just like in the case of a Markdown content file, the filename of Mustache template file also determines the eventual path of the content item.
+But unlike a Markdown content file, a Mustache content file will not be compiled into a HTML file. Instead, it will be
+compiled into whatever format you want. For example a file with a name of <code>feed.xml.mustache</code> will be compiled into <code>feed.xml</code>,
+thus allowing you to determine the file format.</p>
+<h3>Template data</h3>
+<p>In all of your Mustache files (including content files and site layout), the following data is available for use:</p>
+<h4><code>is_home</code></h4>
+<p>Returns true if the user visits the home page of the site.</p>
+<p>Example usage:</p>
+<pre><code class="language-mustache">{{#is_home}}
+&lt;p&gt;Hi! Welcome to my website.&lt;/p&gt;
+{{/is_home}}
+</code></pre>
+<p><strong>Note:</strong> this will never return true when used in a Mustache content file, because content files will never be
+shown on the home page.</p>
+<h4><code>is_post</code></h4>
+<p>Returns true if the user visits any of the content files.</p>
+<p>Example usage:</p>
+<pre><code class="language-mustache">{{#is_post}}
+  &lt;h2&gt;{{title}}&gt;&lt;/h2&gt;
+  &lt;div class=&quot;date&quot;&gt;{{pretty_date}}&lt;/div&gt;
+  &lt;div class=&quot;entry&quot;&gt;{{{entry}}}&lt;/div&gt;
+{{/is_post}}
+</code></pre>
+<h4><code>posts</code></h4>
+<p>Returns a collection of content items inside the <code>content/blog</code> directory that you can use for looping.</p>
+<p>Example usage:</p>
+<pre><code class="language-mustache">&lt;ul class=&quot;posts&quot;&gt;
+{{#posts}} 
+    &lt;li class=&quot;year&quot;&gt;{{year}}&lt;/li&gt;
+    {{#entries}}
+      &lt;li&gt;
+          &lt;h3&gt;&lt;a href=&quot;{{url}}&quot; title=&quot;{{title}}&quot;&gt;{{title}}&lt;/a&gt;&lt;/h3&gt;
+          &lt;div class=&quot;date&quot;&gt;{{pretty_date_without_year}}&lt;/div&gt;
+      &lt;/li&gt;
+    {{/entries}}
+{{/posts}}
+&lt;/ul&gt;
+</code></pre>
+<h4><code>last_update</code></h4>
+<p>Returns the date of the last created content item inside the <code>content/blog</code> directory in <code>EEE, dd MMM yyyy HH:mm:ss Z</code> format.</p>
+<h3>Site configuration</h3>
+<p>Site configuration lives inside the <code>config.json</code> file in the root of the resources' directory. It can contain anything you'd
+like to have there, but these three things are required:</p>
+<ul>
+<li><code>site_url</code> - URL of your website (example: https://example.com)</li>
+<li><code>site_title</code> - title of your website</li>
+<li><code>site_description</code> - description of your website</li>
+</ul>
+<p>All the items inside the <code>config.json</code> file are also available globally in all of your Mustache template files,
+including <code>layout.mustache</code> as well as any content file with the <code>.mustache</code> file extension.</p>
+<h3>Command-line usage</h3>
+<p>To see the full CLI usage of Bloggo, run Bloggo with <code>bloggo -h</code> or <code>bloggo --help</code>.</p>
+<h2>Example sites</h2>
+<ul>
+<li><a href="https://nomm.xyz">Nomm</a> (<a href="https://github.com/soynomm/nomm.xyz">Github repository</a>)</li>
+</ul>
+</div>
+            </div>
+
+
+
+</body>
+</html>

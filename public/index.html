@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#description}}{{description}}{{/description}}{{^description}}{{site_description}}{{/description}}">
-    <title>{{#is_home}}{{site_title}}{{/is_home}}{{^is_home}}{{post.title}} &mdash; Nomm{{/is_home}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -98,35 +98,13 @@
     }
     </style>
 
-    {{#is_post}}{{^post.is_blog}}
-    <script src="{{site_url}}/assets/js/highlight.pack.js"></script>
-    <style>
-    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
-    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
-    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
-    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
-    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
-    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
-    .hljs-literal { color: #0184bb; }
-    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }  
-    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
-    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
-    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
-    @media (prefers-color-scheme: dark) { .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #80a5f6; } }
-
-    .hljs-emphasis { font-style: italic; }
-    .hljs-strong { font-weight: bold; }
-    .hljs-link { text-decoration: underline; }
-    </style>
-    {{/post.is_blog}}{{/is_post}}
 </head>
-<body{{#is_home}} class="home"{{/is_home}}>
+<body class="home">
 
-    {{#is_home}}
     <h1>I'm Nomm</h1>
 
     <p class="description">
-        A Java developer from Tallinn, Estonia currently residing in Buenos Aires, Argentina. On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
+        A Java developer from Tallinn, Estonia currently residing in Buenos Aires, Argentina. On this website you can find my <a href="https://nomm.xyz/projects/">projects</a> and <a href="https://nomm.xyz/blog/">blog</a>. The blog has a <a href="https://nomm.xyz/feed.xml">feed</a>, if
         you're interested in subscribing.
         <br><br>
         <a href="https://github.com/soynomm" class="social-icon">
@@ -135,60 +113,12 @@
         <a href="https://twitter.com/soynomm" class="social-icon">
             <img src="./assets/images/twitter.svg" alt="Twitter">
         </a>
-        <a href="mailto:{{email}}" class="social-icon">
+        <a href="mailto:nomm@nomm.xyz" class="social-icon">
             <img src="./assets/images/mail.svg" alt="E-mail">
         </a>
     </p>
 
-    {{/is_home}}
 
-    {{#is_post}}
-        {{#post.is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}} 
-                <li class="year">{{year}}</li>
-                {{#entries}}
-                    {{#public}}
-                    <li>
-                        <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                        <div class="date">{{pretty_date_without_year}}</div>
-                    </li>
-                    {{/public}}
-                {{/entries}}
-            {{/posts}}
-            </ul>
-
-        {{/post.is_blog}}
-
-        {{^post.is_blog}}
-
-            {{#post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
-                </div>
-            {{/post.date}}
-            {{^post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/post.date}}
-
-            <div class="post">
-                <h1>{{post.title}}</h1>
-                {{#post.date}}<div class="date">{{post.pretty_date}}</div>{{/post.date}}
-                <div class="entry">{{{post.entry}}}</div>
-            </div>
-
-        {{/post.is_blog}}
-
-    {{/is_post}}
 
 </body>
 </html>

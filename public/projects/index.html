@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#description}}{{description}}{{/description}}{{^description}}{{site_description}}{{/description}}">
-    <title>{{#is_home}}{{site_title}}{{/is_home}}{{^is_home}}{{post.title}} &mdash; Nomm{{/is_home}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>Projects &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -98,8 +98,7 @@
     }
     </style>
 
-    {{#is_post}}{{^post.is_blog}}
-    <script src="{{site_url}}/assets/js/highlight.pack.js"></script>
+    <script src="https://nomm.xyz/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
     @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
@@ -118,77 +117,41 @@
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
     </style>
-    {{/post.is_blog}}{{/is_post}}
 </head>
-<body{{#is_home}} class="home"{{/is_home}}>
+<body>
 
-    {{#is_home}}
-    <h1>I'm Nomm</h1>
 
-    <p class="description">
-        A Java developer from Tallinn, Estonia currently residing in Buenos Aires, Argentina. On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
-        you're interested in subscribing.
-        <br><br>
-        <a href="https://github.com/soynomm" class="social-icon">
-            <img src="./assets/images/github.svg" alt="Github">
-        </a>
-        <a href="https://twitter.com/soynomm" class="social-icon">
-            <img src="./assets/images/twitter.svg" alt="Twitter">
-        </a>
-        <a href="mailto:{{email}}" class="social-icon">
-            <img src="./assets/images/mail.svg" alt="E-mail">
-        </a>
-    </p>
 
-    {{/is_home}}
 
-    {{#is_post}}
-        {{#post.is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}} 
-                <li class="year">{{year}}</li>
-                {{#entries}}
-                    {{#public}}
-                    <li>
-                        <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                        <div class="date">{{pretty_date_without_year}}</div>
-                    </li>
-                    {{/public}}
-                {{/entries}}
-            {{/posts}}
-            </ul>
-
-        {{/post.is_blog}}
-
-        {{^post.is_blog}}
-
-            {{#post.date}}
                 <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
+                    <a href="https://nomm.xyz/">&laquo; back</a>
                 </div>
-            {{/post.date}}
-            {{^post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/post.date}}
 
             <div class="post">
-                <h1>{{post.title}}</h1>
-                {{#post.date}}<div class="date">{{post.pretty_date}}</div>{{/post.date}}
-                <div class="entry">{{{post.entry}}}</div>
+                <h1>Projects</h1>
+                
+                <div class="entry"><p>I'm a passionate tinkerer who got into software development not for a job, but
+for scratching that curiosity itch. I also really like building stuff. The
+job just naturally followed. Now while I have plenty more projects on my
+<a href="https://github.com/soynomm">Github page</a>, this here is a list of the ones that are more actively
+maintained.</p>
+<h2><a href="https://github.com/soynomm/bloggo">Bloggo</a></h2>
+<p>A blog-oriented static site generator used for this very site, written in
+Java. I wrote this to learn Java and to, naturally, have a tailor-made blog
+machine that tickles my fancy.</p>
+<p><strong>Status:</strong> in active development.</p>
+<h2><a href="https://github.com/soynomm/penned">Penned</a></h2>
+<p>A note-keeping service for minimalists who prefer plain-text over WYSIWYG. I'm building this currently in part to get more comfortable with <a href="https://spring.io">Spring</a> and because I simply don't like any note-keeping service out there for one or another reason.</p>
+<p><strong>Status:</strong> In active development.</p>
+<h2><a href="https://wordpress.org/plugins/splendid-speed/">Splendid Speed</a></h2>
+<p>A WordPress performance plugin I made pretty much out of frustration that any
+existing plugin was full of bloat, ads or who-knows-what. It has a total of 12
+modules to speed up your WordPress powered site, entirely free, no strings attached.</p>
+<p><strong>Status:</strong> feature-complete, in maintenance mode. Think you could make something more of it? <a href="mailto:nomm@nomm.xyz">Get in touch</a> and I might just gift it to you, since I'm no longer interested in PHP nor WordPress.</p>
+</div>
             </div>
 
-        {{/post.is_blog}}
 
-    {{/is_post}}
 
 </body>
 </html>

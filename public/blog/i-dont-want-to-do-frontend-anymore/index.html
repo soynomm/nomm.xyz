@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="{{#description}}{{description}}{{/description}}{{^description}}{{site_description}}{{/description}}">
-    <title>{{#is_home}}{{site_title}}{{/is_home}}{{^is_home}}{{post.title}} &mdash; Nomm{{/is_home}}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{site_url}}/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{site_url}}/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{site_url}}/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="{{site_url}}/assets/site.webmanifest">
-    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="{{site_url}}/feed.xml" />
+    <meta name="description" content="Nomm is a software engineer, this is his personal site and blog.">
+    <title>I don&#39;t want to do front-end anymore &mdash; Nomm</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nomm.xyz/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nomm.xyz/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nomm.xyz/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://nomm.xyz/assets/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Nomm &raquo; RSS" href="https://nomm.xyz/feed.xml" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -98,8 +98,7 @@
     }
     </style>
 
-    {{#is_post}}{{^post.is_blog}}
-    <script src="{{site_url}}/assets/js/highlight.pack.js"></script>
+    <script src="https://nomm.xyz/assets/js/highlight.pack.js"></script>
     <style>
     .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
     @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
@@ -118,77 +117,60 @@
     .hljs-strong { font-weight: bold; }
     .hljs-link { text-decoration: underline; }
     </style>
-    {{/post.is_blog}}{{/is_post}}
 </head>
-<body{{#is_home}} class="home"{{/is_home}}>
+<body>
 
-    {{#is_home}}
-    <h1>I'm Nomm</h1>
 
-    <p class="description">
-        A Java developer from Tallinn, Estonia currently residing in Buenos Aires, Argentina. On this website you can find my <a href="{{site_url}}/projects/">projects</a> and <a href="{{site_url}}/blog/">blog</a>. The blog has a <a href="{{site_url}}/feed.xml">feed</a>, if
-        you're interested in subscribing.
-        <br><br>
-        <a href="https://github.com/soynomm" class="social-icon">
-            <img src="./assets/images/github.svg" alt="Github">
-        </a>
-        <a href="https://twitter.com/soynomm" class="social-icon">
-            <img src="./assets/images/twitter.svg" alt="Twitter">
-        </a>
-        <a href="mailto:{{email}}" class="social-icon">
-            <img src="./assets/images/mail.svg" alt="E-mail">
-        </a>
-    </p>
 
-    {{/is_home}}
 
-    {{#is_post}}
-        {{#post.is_blog}}
-
-            <div class="back">
-                <a href="{{site_url}}/">&laquo; back</a>
-            </div>
-
-            <h1>Blog</h1>
-
-            <ul class="posts">
-            {{#posts}} 
-                <li class="year">{{year}}</li>
-                {{#entries}}
-                    {{#public}}
-                    <li>
-                        <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-                        <div class="date">{{pretty_date_without_year}}</div>
-                    </li>
-                    {{/public}}
-                {{/entries}}
-            {{/posts}}
-            </ul>
-
-        {{/post.is_blog}}
-
-        {{^post.is_blog}}
-
-            {{#post.date}}
                 <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
+                    <a href="https://nomm.xyz/blog/">&laquo; back</a>
                 </div>
-            {{/post.date}}
-            {{^post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/post.date}}
 
             <div class="post">
-                <h1>{{post.title}}</h1>
-                {{#post.date}}<div class="date">{{post.pretty_date}}</div>{{/post.date}}
-                <div class="entry">{{{post.entry}}}</div>
+                <h1>I don&#39;t want to do front-end anymore</h1>
+                <div class="date">Feb 08, 2021</div>
+                <div class="entry"><p>I started coding when I was 14, around 2007 or so. The very first thing I wrote was HTML, then CSS. I liked
+making stupid little web pages containing youtube embeds and guest books (anyone remembers those?) full of
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee">marquees</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink">blinks</a>
+and gifs. Lots of gifs. The pages were very simple, but joyful to make and also to use. At the time I had no idea that
+you could make any money with making web pages, I simply thought it was a silly hobby people could have.</p>
+<p>Fast-forward 3 years I got my first few gigs as a web developer. By then I was pretty good at HTML and CSS already,
+had dabbled enough with PHP to know my way around most sticky problems I would find myself in and while I didn't
+really know much of vanilla JavaScript, it was okay, because everyone used almost exclusively <a href="https://jquery.com/">jQuery</a> anyway. Yet still,
+the websites were rather simple and joyful to make.</p>
+<p>It was easy to get started, too - you just created the files and refreshed the page. HTML? PHP? JavaScript? Just create the
+file and save it, then refresh the browser. Rinse and repeat until you are happy with the result. But then, almost
+out of nowhere, something changed. At first, it came slowly and before it could even speed up, it was already here.
+<strong>The complicated web was here</strong>.</p>
+<p>Nowadays I make a living mainly with JavaScript and TypeScript using React.js as a front-end framework. That's right,
+front-ends are so complex they now need frameworks to be able to manage their seemingly infinite component hierarchies.
+JavaScript no longer is liked by the community, so the community created a poor man's version of a typed language which
+duct-tapes around an <a href="https://whydoesitsuck.com/why-does-javascript-suck/">already poorly made language</a>.</p>
+<p>Starting a new project? Make sure to write your project idea down because by the time you are finished setting up the vast
+boilerplate you have probably forgotten it. Vast boilerplate? Oh yeah, you better set-up your project with <a href="https://www.typescriptlang.org/">TypeScript</a>,
+<a href="https://eslint.org/">ESlint</a>, <a href="https://webpack.js.org/">Webpack</a> and <a href="https://babeljs.io/">Babel</a>, because
+if you don't then obviously you haven't learned anything since 2005 and suck. Don't have <a href="https://www.npmjs.com/">NPM</a>? Better install that, too,
+because nobody installs libraries without a package manager anymore. Oh and while you're at it, install also <a href="https://yarnpkg.com/">Yarn</a>,
+because why not make use of two package managers at the same time. <em>Phew</em>, you did all that? Damn, that's commitment!
+You can finally write what is essentially just HTML and JavaScript!</p>
+<p>Now, don't forget we also want to style our project, but if you thought you could get away with writing good ol' CSS,
+you were wrong. We no longer write CSS, because it's lame. We now write <a href="https://sass-lang.com/">SCSS</a> instead,
+so that we could write dynamic stylesheets that convert to CSS, because <a href="https://hospodarets.com/you-might-not-need-a-css-preprocessor">of course 99% of the web needs that</a>.</p>
+<p>But enough of the hating. If I wanted I could hate on anything most likely, and the web has come a long way since 2007,
+in lots of good ways, and I don't want to discredit that. I suppose with the increase of complexity in what we want to
+achieve on the web the stack to achieve it with has had to also increase in complexity. For me, personally, it's
+too much. I want to have a personal life and not have to spend my nights reading up on some new flavour of *.js in
+fear that if I don't I would soon be made irrelevant. I don't want to learn nor use a million different tools. I don't want
+to know a bit about everything and a lot about nothing.</p>
+<p>Thus, I don't want to do front-end development anymore. The joy is gone. I've given in my resignation at my current place of
+employment and will be seeking an exclusively back-end role for my next adventure, starting April. The language doesn't
+matter much to me, I know enough of them to know that they are all very similar and thus easy enough to learn. If you know of a
+good opportunity, <a href="mailto:nomm@soynomm.com">let me know</a>.</p>
+</div>
             </div>
 
-        {{/post.is_blog}}
 
-    {{/is_post}}
 
 </body>
 </html>
