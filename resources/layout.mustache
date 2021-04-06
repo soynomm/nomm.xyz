@@ -181,16 +181,24 @@
 
         {{^post.is_blog}}
 
-            {{#post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/blog/">&laquo; back</a>
-                </div>
-            {{/post.date}}
-            {{^post.date}}
-                <div class="back">
-                    <a href="{{site_url}}/">&laquo; back</a>
-                </div>
-            {{/post.date}}
+            {{#post.is_project}}
+            <div class="back">
+                <a href="{{site_url}}/projects/">&laquo; back</a>
+            </div>
+            {{/post.is_project}}
+
+            {{^post.is_project}}
+                {{#post.date}}
+                    <div class="back">
+                        <a href="{{site_url}}/blog/">&laquo; back</a>
+                    </div>
+                {{/post.date}}
+                {{^post.date}}
+                    <div class="back">
+                        <a href="{{site_url}}/">&laquo; back</a>
+                    </div>
+                {{/post.date}}
+            {{/post.is_project}}
 
             <div class="post">
                 <h1>{{post.title}}</h1>

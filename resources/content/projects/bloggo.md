@@ -1,6 +1,7 @@
 ---
 title: Bloggo
 description: A blog-oriented static site generator
+is_project: true
 ---
 
 A blog-oriented static site generator that supports static content in the form of Markdown files as well as 
