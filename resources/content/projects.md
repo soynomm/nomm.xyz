@@ -10,7 +10,7 @@ job just naturally followed. Now while I have plenty more projects on my
 [Github page](https://github.com/soynomm), this here is a list of the ones that are more actively 
 maintained.
 
-## [Bloggo](https://github.com/soynomm/bloggo)
+## [Bloggo](/projects/bloggo)
 
 A blog-oriented static site generator used for this very site, written in 
 Java. I wrote this to learn Java and to, naturally, have a tailor-made blog 

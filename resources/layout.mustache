@@ -89,12 +89,19 @@
     @media (prefers-color-scheme: dark) { .post  .entry { color: #e5e5e5; } }
     .post .entry p { margin-top: 20px; margin-bottom: 20px; }
     .post .entry h2 { color: #111; margin-top: 60px; margin-bottom: 0; }
+    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
     .post .entry h3 { text-transform: uppercase; font-weight: 500; color: #999; margin-top: 40px; margin-bottom: 20px; }
+    @media (prefers-color-scheme: dark) { .post .entry h3 { color:  #bbb; } }
     .post .entry h4 { text-transform: uppercase; font-weight: 400; color: #999; margin-top: 40px; margin-bottom: 20px; }
+    @media (prefers-color-scheme: dark) { .post .entry h4 { color:  #ddd; } }
     .post .entry h2 code,
     .post .entry h3 code,
     .post .entry h4 code { border: 1px solid #e5e5e5; border-radius: 3px; padding: 2px 4px;}
-    @media (prefers-color-scheme: dark) { .post .entry h2 { color:  #fff; } }
+    @media (prefers-color-scheme: dark) { 
+        .post .entry h2 code,
+        .post .entry h3 code,
+        .post .entry h4 code { border: 1px solid #333; } 
+    }
     .post .entry hr { width: 25px; border: 0; border-top: 1px solid var(--color); margin-top: 60px;}
     .post .entry ul { margin-left: 17px; }
     .post .entry ol { margin-left: 28px; }
