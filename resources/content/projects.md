@@ -18,12 +18,6 @@ machine that tickles my fancy.
 
 **Status:** in active development.
 
-## [Penned](https://github.com/soynomm/penned)
-
-A note-keeping service for minimalists who prefer plain-text over WYSIWYG. I'm building this currently in part to get more comfortable with [Spring](https://spring.io) and because I simply don't like any note-keeping service out there for one or another reason.
-
-**Status:** In active development.
-
 ## [Splendid Speed](https://wordpress.org/plugins/splendid-speed/)
 
 A WordPress performance plugin I made pretty much out of frustration that any 
