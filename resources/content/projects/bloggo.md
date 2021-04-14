@@ -5,7 +5,7 @@ is_project: true
 ---
 
 A blog-oriented static site generator that supports static content in the form of Markdown files as well as 
-dynamic content in the form of Mustache templates, allowing you to create flexible websites.
+dynamic content in the form of Handlebars templates, allowing you to create flexible websites.
 
 - [Installation](#installation)
   - [Linux](#linux)
@@ -16,7 +16,7 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
   - [Directory structure](#directory-structure)
   - [Content files](#content-files)
     - [Markdown](#markdown)
-    - [Mustache](#mustache)
+    - [Handlebars](#handlebars)
   - [Site layout](#site-layout)
   - [Template data](#template-data)
   - [Site configuration](#site-configuration)
@@ -25,7 +25,6 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 
 ## Installation
 
-<a name="linux"></a>
 ### Linux
 
 1. Download the `bloggo-linux` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
@@ -33,7 +32,6 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 3. Make it executable via `chmod +x bloggo`
 4. Run it with `./bloggo` (or move it to `/usr/local/bin` to access globally as `bloggo`)
 
-<a name="macos"></a>
 ### macOS
 
 1. Download the `bloggo-mac` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
@@ -41,30 +39,25 @@ dynamic content in the form of Mustache templates, allowing you to create flexib
 3. Make it executable via `chmod +x bloggo`
 4. Run it with `./bloggo` (or move it to `/usr/local/bin` to access globally as `bloggo`)
 
-<a name="windows"></a>
 ### Windows
 
 1. Download the `bloggo.exe` executable from the [latest release](https://github.com/soynomm/bloggo/releases)
 3. Run it with `.\bloggo.exe` (or add it to PATH to access globally as `bloggo`)
 
-<a name="java"></a>
 ### Java
 
 To run it on any platform that has Java, you'll need Java 11+, download the `bloggo.jar` file and run it with `java -jar bloggo.jar`.
 
-<a name="updating"></a>
 ## Updating
 
 To update any previous version you might have, simply overwrite/replace your existing Bloggo executable with a new one.
 
-<a name="usage"></a>
 ## Usage
 
 Using Bloggo is straight-forward in that you just need to have a resources' directory that contains everything your static
-website needs, like a `config.json` file for configuration, a `layout.mustache` file for the website template as well as a `content` 
+website needs, like a `config.json` file for configuration, a `layout.hbs` file for the website template as well as a `content` 
 directory inside the resources' directory for all the content files that make up your website.
 
-<a name="directory-structure"></a>
 ### Directory structure
 
 By default, Bloggo is looking for a resources' directory called `resources` (you can specify any other directory by calling `bloggo -r {directory}` or `bloggo --resources {directory}`).
@@ -76,25 +69,22 @@ The resources' directory structure needs to look like this:
     - author/
       - john.md
   - config.json
-  - layout.mustache
+  - layout.hbs
   
-<a name="site-layout"></a>
 ### Site layout
 
-The site layout of your static website lives inside a [Mustache](https://mustache.github.io/mustache.5.html) template file `layout.mustache` in the root of the resources' directory.
-That layout file has all the [template data](#template-data) available to it just like all Mustache content files do, and just
-like all Mustache content files, it also can have any structure you want it to have. 
+The site layout of your static website lives inside a [Handlebars](https://handlebarsjs.com) template file `layout.hbs` in the root of the resources' directory.
+That layout file has all the [template data](#template-data) available to it just like all Handlebars content files do, and just
+like all Handlebars content files, it also can have any structure you want it to have. 
 
-You can check out [my own website' layout.mustache](https://github.com/soynomm/nomm.xyz/layout.mustache) for an example use-case.
+You can check out [my own website' layout.hbs](https://github.com/soynomm/nomm.xyz/layout.hbs) for an example use-case.
 
-<a name="content-files"></a>
 ### Content files
 
-All the content files reside inside the `content` directory. There are two types of content files - Markdown ({filename}.md) and Mustache ({filename}.mustache).
-Markdown content files are meant for static content, such as blog posts and pages. Mustache
+All the content files reside inside the `content` directory. There are two types of content files - Markdown ({filename}.md) and Handlebars ({filename}.hbs).
+Markdown content files are meant for static content, such as blog posts and pages. Handlebars
 content files are meant for custom, dynamic pages.
 
-<a name="markdown"></a>
 #### Markdown
 
 A Markdown content file looks like this:
@@ -109,8 +99,8 @@ Hi there, world.
 ```
 
 Meta-data of each Markdown content file goes in-between 3 hyphens, and the entry of the content file itself will go below the meta-data.
-Markdown content file data is available to you via `{{metakey}}` Mustache templating, for example the above content file would be
-available via the following Mustache variables:
+Markdown content file data is available to you via `{{metakey}}` Handlebars templating, for example the above content file would be
+available via the following Handlebars variables:
 
 - `{{title}}` - renders the meta-data title value
 - `{{date}}` - renders the default date in the format of `EEE, dd MMM yyyy HH:mm:ss Z`
@@ -124,23 +114,21 @@ available via the following Mustache variables:
 The filename determines the eventual path of the content item. For example a file with a name of `hello-world.md` will be 
 compiled into `/hello-world/index.html`, and thus be accessible via the URL https://example.com/hello-world/.
 
-<a name="mustache"></a>
-#### Mustache
+#### Handlebars
 
-A Mustache content file can have any structure you want. You can check out [my own website content files](https://github.com/soynomm/nomm.xyz) for example use-cases. 
+A Handlebars content file can have any structure you want. You can check out [my own website content files](https://github.com/soynomm/nomm.xyz) for example use-cases. 
 
-It's important to note that unlike a Markdown content file, a Mustache content file does not use site layout 
-and thus enables (and encourages) an entirely new layout for each Mustache content file.
+It's important to note that unlike a Markdown content file, a Handlebars content file does not use site layout 
+and thus enables (and encourages) an entirely new layout for each Handlebars content file.
 
-Just like in the case of a Markdown content file, the filename of Mustache template file also determines the eventual path of the content item. 
-But unlike a Markdown content file, a Mustache content file will not be compiled into a HTML file. Instead, it will be 
-compiled into whatever format you want. For example a file with a name of `feed.xml.mustache` will be compiled into `feed.xml`, 
+Just like in the case of a Markdown content file, the filename of Handlebars template file also determines the eventual path of the content item. 
+But unlike a Markdown content file, a Handlebars content file will not be compiled into a HTML file. Instead, it will be 
+compiled into whatever format you want. For example a file with a name of `feed.xml.hbs` will be compiled into `feed.xml`, 
 thus allowing you to determine the file format.
 
-<a name="template-data"></a>
 ### Template data
 
-In all of your Mustache files (including content files and site layout), the following data is available for use:
+In all of your Handlebars files (including content files and site layout), the following data is available for use:
 
 #### `is_home`
 
@@ -154,7 +142,7 @@ Example usage:
 {{/is_home}}
 ```
 
-**Note:** this will never return true when used in a Mustache content file, because content files will never be 
+**Note:** this will never return true when used in a Handlebars content file, because content files will never be 
 shown on the home page.
 
 #### `is_post`
@@ -195,7 +183,6 @@ Example usage:
 
 Returns the date of the last created content item inside the `content/blog` directory in `EEE, dd MMM yyyy HH:mm:ss Z` format.
 
-<a name="site-configuration"></a>
 ### Site configuration
 
 Site configuration lives inside the `config.json` file in the root of the resources' directory. It can contain anything you'd 
@@ -205,15 +192,13 @@ like to have there, but these three things are required:
 - `site_title` - title of your website
 - `site_description` - description of your website
 
-All the items inside the `config.json` file are also available globally in all of your Mustache template files, 
-including `layout.mustache` as well as any content file with the `.mustache` file extension.
+All the items inside the `config.json` file are also available globally in all of your Handlebars template files, 
+including `layout.hbs` as well as any content file with the `.hbs` file extension.
 
-<a name="command-line-usage"></a>
 ### Command-line usage
 
 To see the full CLI usage of Bloggo, run Bloggo with `bloggo -h` or `bloggo --help`. 
 
-<a name="example-sites"></a>
 ## Example sites
 
 - [Nomm](https://nomm.xyz) ([Github repository](https://github.com/soynomm/nomm.xyz))
