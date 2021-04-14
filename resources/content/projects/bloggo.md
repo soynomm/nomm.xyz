@@ -100,13 +100,10 @@ Hi there, world.
 
 Meta-data of each Markdown content file goes in-between 3 hyphens, and the entry of the content file itself will go below the meta-data.
 Markdown content file data is available to you via `{{metakey}}` Handlebars templating, for example the above content file would be
-available via the following Handlebars variables:
+available via the following variables in your Handlebars templates:
 
 - `{{title}}` - renders the meta-data title value
-- `{{date}}` - renders the default date in the format of `EEE, dd MMM yyyy HH:mm:ss Z`
-- `{{date_unparsed}}` - renders the date as it is in the content file
-- `{{pretty_date}}` - renders the date in the format of `MMM dd, yyyy`
-- `{{pretty_date_without_year}}` - renders the date in the format of `MMM dd`
+- `{{date}}` - renders the date as it is in the content file
 - `{{{entry}}}` - renders the entry-block Markdown into HTML. Yes, needs 3 brackets.
 - `{{url}}` - renders the fully-qualified URL of the content item (https://example.com/hello-world/)
 - `{{path}}` - renders the content item's path (/hello-world/)
@@ -126,6 +123,20 @@ But unlike a Markdown content file, a Handlebars content file will not be compil
 compiled into whatever format you want. For example a file with a name of `feed.xml.hbs` will be compiled into `feed.xml`, 
 thus allowing you to determine the file format.
 
+### Helpers
+
+#### `format_date`
+
+You can use the `format_date` helper to shape up your dates by passing it the 
+date variable, and the format in which you want the output to be, for example:
+
+```handlebars
+{{format_date date "MMM dd, yyyy"}}
+```
+
+The `date` is the actual meta-data coming from your content file. The following is the SimpleDateFormat date format string. 
+You can find all the combinations you can use [http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html](here).
+
 ### Template data
 
 In all of your Handlebars files (including content files and site layout), the following data is available for use:
@@ -136,7 +147,7 @@ Returns true if the user visits the home page of the site.
 
 Example usage:
 
-```
+```handlebars
 {{#is_home}}
 <p>Hi! Welcome to my website.</p>
 {{/is_home}}
@@ -151,10 +162,10 @@ Returns true if the user visits any of the content files.
 
 Example usage:
 
-```
+```handlebars
 {{#is_post}}
   <h2>{{title}}></h2>
-  <div class="date">{{pretty_date}}</div>
+  <div class="date">{{format_date date "MMM dd, yyyy"}}</div>
   <div class="entry">{{{entry}}}</div>
 {{/is_post}}
 ```
@@ -165,14 +176,14 @@ Returns a collection of content items inside the `content/blog` directory that y
 
 Example usage:
 
-```
+```handlebars
 <ul class="posts">
 {{#posts}} 
     <li class="year">{{year}}</li>
     {{#entries}}
       <li>
           <h3><a href="{{url}}" title="{{title}}">{{title}}</a></h3>
-          <div class="date">{{pretty_date_without_year}}</div>
+          <div class="date">{{format_date date "MMM dd, yyyy"}}</div>
       </li>
     {{/entries}}
 {{/posts}}
@@ -181,7 +192,7 @@ Example usage:
 
 #### `last_update`
 
-Returns the date of the last created content item inside the `content/blog` directory in `EEE, dd MMM yyyy HH:mm:ss Z` format.
+Returns the date of the last created content item inside the `content/blog` directory.
 
 ### Site configuration
 
