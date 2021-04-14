@@ -18,6 +18,7 @@ dynamic content in the form of Handlebars templates, allowing you to create flex
     - [Markdown](#markdown)
     - [Handlebars](#handlebars)
   - [Site layout](#site-layout)
+  - [Helpers](#helpers)
   - [Template data](#template-data)
   - [Site configuration](#site-configuration)
   - [Command-line usage](#command-line-usage)
