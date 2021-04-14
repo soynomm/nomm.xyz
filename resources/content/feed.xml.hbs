@@ -11,7 +11,7 @@
     <atom:link href="{{site_url}}/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>{{site_url}}</link>
     <description>{{site_description}}</description>
-    <lastBuildDate>{{last_update}}</lastBuildDate>
+    <lastBuildDate>{{format_date last_update "EEE, dd MMM yyyy HH:mm:ss Z"}}</lastBuildDate>
     <language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
@@ -20,7 +20,7 @@
     <item>
         <title>{{title}}</title>
         <link>{{url}}</link>
-        <pubDate>{{date}}</pubDate>
+        <pubDate>{{format_date date "EEE, dd MMM yyyy HH:mm:ss Z"}}</pubDate>
         <guid isPermaLink="false">{{url}}</guid>
         <description>{{description}}</description>
         <content:encoded><![CDATA[{{{entry}}}]]></content:encoded>
