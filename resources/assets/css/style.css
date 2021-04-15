@@ -325,14 +325,24 @@ POST PAGE
 .post .entry h4 { 
     text-transform: uppercase; 
     font-weight: 500; 
-    color: #999; 
+    color: #bbb; 
     margin-top: 40px; 
     margin-bottom: 20px;
 }
 
+.post .entry h4:before {
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--color);
+    border-radius: 100%;
+    position: absolute;
+}
+
 @media (prefers-color-scheme: dark) { 
     .post .entry h4 { 
-        color:  #555;
+        color: #ccc;
     }
 }
 
