@@ -13,28 +13,10 @@
     <link rel="stylesheet" href="{{site_url}}/assets/css/style.css">
     {{#is_post}}{{^post.is_blog}}
     <script src="{{site_url}}/assets/js/highlight.pack.js"></script>
-    <style>
-    .hljs { display: block;width: calc(100% + 40px);color: #383a42;overflow: auto;background: #fff;border:1px solid #e5e5e5; border-radius: 5px; padding: 20px;margin-left: -20px; }
-    @media (prefers-color-scheme: dark) { .hljs { color: #e5e5e5; background: #111; border: 1px solid #333; } }
-    @media all and (max-width: 600px) { .hljs { border-radius: 0; border-left: 0; border-right: 0; }}
-    .hljs-comment, .hljs-quote { color: #a0a1a7; font-style: italic; }
-    .hljs-doctag, .hljs-keyword, .hljs-formula { color: var(--color); }
-    .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: #e45649; }
-    .hljs-literal { color: #0184bb; }
-    .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: #50a14f; }  
-    .hljs-built_in, .hljs-class .hljs-title { color: #c18401; }
-    .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: #986801; }
-    .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #4078f2; }
-    @media (prefers-color-scheme: dark) { .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: #80a5f6; } }
-
-    .hljs-emphasis { font-style: italic; }
-    .hljs-strong { font-weight: bold; }
-    .hljs-link { text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="{{site_url}}/assets/css/code.css">
     {{/post.is_blog}}{{/is_post}}
     
     <script async defer data-domain="nomm.xyz" src="https://plausible.io/js/plausible.js"></script>
-
 </head>
 <body{{#is_home}} class="home"{{/is_home}}>
 

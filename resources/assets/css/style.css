@@ -179,61 +179,14 @@ a {
     text-decoration: none;
 }
 
-a {
-    display: inline-block;
-    position: relative;
-    color: var(--color);
-    text-decoration: none;
-    padding: 0 6px;
+a:hover {
+    border-bottom: 1px solid #e5e5e6;
 }
 
-a:before, a:after {
-    will-change: transform;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-}
-
-a:before {
-    transition: 100ms ease-out 50ms;
-    transform-origin: 0 24px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: mix(var(--color), #fff, 80%);
-}
-
-a:after {
-    transition: 50ms ease-out;
-    transform: scaleX(0);
-    transform-origin: left center;
-    bottom: 2px;
-    right: -12px;
-    border: 8px solid transparent;
-    border-left-color: mix(var(--color), #fff, 60%);
-}
-
-a:hover:before {
-    transition: 100ms ease-out;
-    transform: scaleY(.18);
-    background: mix(var(--color), #fff, 60%);
-}
-
-a:hover:after {
-    transition: 50ms ease-out 100ms;
-    transform: none;
-}
-
-a:active:before {
-    transition: 100ms ease-in;
-    background: mix(var(--color), #fff, 40%);
-}
-
-a:active:after {
-    transition: 100ms ease-in;
-    border-left-color: mix(var(--color), #fff, 40%);
+@media (prefers-color-scheme: dark) { 
+    a:hover {
+        border-bottom: 1px solid #353535;
+    }
 }
 
 em { 
