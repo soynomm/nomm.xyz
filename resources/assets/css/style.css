@@ -345,7 +345,7 @@ POST PAGE
 
 @media (prefers-color-scheme: dark) { 
     .post .entry h4 { 
-        color: #666;
+        color: #888;
     }
 }
 
@@ -385,4 +385,9 @@ POST PAGE
 .post .entry > ol { 
     margin-top: 20px; 
     margin-bottom: 20px; 
+}
+
+.post .entry > ul li,
+.post .entry > ol li {
+    margin-bottom: 5px;
 }
