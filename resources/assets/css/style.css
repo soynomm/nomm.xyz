@@ -324,8 +324,8 @@ POST PAGE
 
 .post .entry h4 { 
     text-transform: uppercase; 
-    font-weight: 500; 
-    color: #bbb; 
+    font-weight: 400; 
+    color: #888; 
     margin-top: 40px; 
     margin-left: 15px;
     margin-bottom: 20px;
@@ -345,7 +345,7 @@ POST PAGE
 
 @media (prefers-color-scheme: dark) { 
     .post .entry h4 { 
-        color: #ccc;
+        color: #666;
     }
 }
 
