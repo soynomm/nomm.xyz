@@ -166,6 +166,7 @@ h2 a {
 
 a { 
     color: var(--color);
+    text-decoration: none;
 }
 
 em { 
@@ -362,7 +363,7 @@ POST PAGE
 .post .entry h3 { 
     text-transform: uppercase; 
     font-weight: 400; 
-    color: #fff; 
+    color: #111; 
     margin-top: 40px; 
     margin-bottom: 20px;
 }
@@ -380,7 +381,7 @@ POST PAGE
 .post .entry h4 { 
     text-transform: uppercase; 
     font-weight: 400; 
-    color: #888; 
+    color: #777; 
     margin-top: 40px; 
     margin-left: 15px;
     margin-bottom: 20px;
@@ -391,16 +392,20 @@ POST PAGE
     content: '';
     width: 5px;
     height: 5px;
-    background: var(--color);
+    background: #ddd;
     border-radius: 100%;
     position: absolute;
     margin-top: 9px;
     margin-left: -15px;
 }
 
-@media (prefers-color-scheme: dark) { 
+@media (prefers-color-scheme: dark) {
+    .post .entry h4:before {
+        background: #555;
+    }
+     
     .post .entry h4 { 
-        color: #999;
+        color: #bbb;
     }
 }
 
