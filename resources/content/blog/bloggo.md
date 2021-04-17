@@ -2,6 +2,7 @@
 title: Bloggo
 description: A blog-oriented static site generator, how it came to be and where it might lead.
 date: 2021-04-17
+public: true
 ---
 
 [Two months ago I wrote a blog post](https://nomm.xyz/blog/creating-a-static-site-generator-in-python/) on how to create a static site generator in Python, because at the time I was learning Python and thinking I'll find a back-end Python job. In the end of that blog post I wrote, passingly, that I had called the end result of that [Bloggo](https://nomm.xyz/projects/bloggo/) and that it runs this very site. Well, some time has passed and many changes to it have been made since then, but I'm now ready to make it official with a blog post - I have created a static site generator and I'm pretty damn proud of it.
