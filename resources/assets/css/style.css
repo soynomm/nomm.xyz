@@ -322,6 +322,7 @@ POST PAGE
     font-weight: 300; 
     color: #bbb; 
     text-decoration: none;
+    border: 0;
 }
 
 @media (prefers-color-scheme: dark) { 
