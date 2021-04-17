@@ -238,6 +238,7 @@ HOME PAGE
     display: inline-block; 
     width: 15px; 
     height: auto; 
+    border: 0;
     opacity: .5;
     margin-right: 5px;
 }
