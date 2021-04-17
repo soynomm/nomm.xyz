@@ -11,7 +11,7 @@ VARIABLES
 @media (prefers-color-scheme: dark) { 
     :root { 
         --color: #fb4f4f; 
-        --lightColor: #fed4d4;
+        --lightColor: #fc8181;
     }
 }
 
