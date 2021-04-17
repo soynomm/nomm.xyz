@@ -5,11 +5,13 @@ VARIABLES
 */
 :root { 
     --color: #DF0505;
+    --lightColor: #fdb3b3;
 }
 
 @media (prefers-color-scheme: dark) { 
     :root { 
         --color: #fb4f4f; 
+        --lightColor: #fed4d4;
     }
 }
 
@@ -177,16 +179,7 @@ h2 a {
 a { 
     color: var(--color);
     text-decoration: none;
-}
-
-a:hover {
-    border-bottom: 1px solid #e5e5e6;
-}
-
-@media (prefers-color-scheme: dark) { 
-    a:hover {
-        border-bottom: 1px solid #353535;
-    }
+    border-bottom: 1px solid var(--lightColor);
 }
 
 em { 
